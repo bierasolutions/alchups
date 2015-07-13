@@ -47,4 +47,14 @@ RSpec.describe TanksController, :type => :controller do
       end
     end
   end
+
+  describe "GET 'index'" do
+    before(:each) do
+      get :index
+    end
+    it "returns http success" do
+      expect(response).to be_success
+    end
+    
+  end
 end

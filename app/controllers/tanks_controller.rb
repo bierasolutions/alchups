@@ -13,6 +13,14 @@ class TanksController < ApplicationController
 
   end
 
+  def show
+    
+  end
+
+  def index
+    @tanks = Tank.all
+  end
+
   private
     def tank_params
       params.require(:tank).permit(:title, :description, :latitude,:longitude, :notes)

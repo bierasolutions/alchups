@@ -1,0 +1,9 @@
+<h1>Aljibes</h1>
+
+<ul>
+  <% @tanks.each do |tank| %>
+    <li>
+      <%= link_to tank.title, tank %>
+    </li>
+  <% end %>
+</ul>  
