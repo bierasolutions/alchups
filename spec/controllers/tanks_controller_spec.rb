@@ -55,6 +55,24 @@ RSpec.describe TanksController, :type => :controller do
     it "returns http success" do
       expect(response).to be_success
     end
-    
   end
+
+  describe "GET 'show'" do
+    render_views
+    
+    before(:each) do
+      @tank = FactoryGirl.create(:tank)
+      get :show, {:id => @tank.id}
+    end
+
+    it "returns http success" do
+      expect(response).to be_success
+    end
+
+    it "contains tank title" do
+      expect(response.body).to include(@tank.title)
+    end
+  end
+
+
 end

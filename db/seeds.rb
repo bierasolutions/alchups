@@ -8,7 +8,7 @@
 Tank.create(title: "ALCHUP DE LA TORRE BASO", description: "Una descripcion", latitude: 775285.96, longitude: 4642975.72, notes: "TRANSFORMADO EN PISCINA AZUL")
 
 50.times do |n|
-  title  = Faker::Lorem.word
+  title  = Faker::Lorem.word.upcase
   description = Faker::Lorem.paragraph
   latitude = Faker::Number.decimal(2)
   longitude = Faker::Number.decimal(2)
