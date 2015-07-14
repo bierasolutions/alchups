@@ -3,7 +3,7 @@
 <ul>
   <% @tanks.each do |tank| %>
     <li>
-      <%= link_to tank.title, tank %>
+      <%= link_to tank.title, tank %> <%= link_to "editar", edit_tank_path(tank) %> <%= link_to "borrar", '#' %>
     </li>
   <% end %>
 </ul>  

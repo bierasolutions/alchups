@@ -74,5 +74,54 @@ RSpec.describe TanksController, :type => :controller do
     end
   end
 
+  describe "GET 'edit'" do
+    
+    before(:each) do
+      @tank = FactoryGirl.create(:tank)
+      get :edit, {:id => @tank.id}
+    end
+
+    it "returns http success" do
+      expect(response).to be_success
+    end
+  end
+
+  describe "PUT update" do
+   
+    before(:each) do
+      @tank = FactoryGirl.create(:tank)
+    end
+
+    describe "with valid params" do
+      before(:each) do
+        put :update, :id => @tank.id,:tank => {:title => 'Nuevo Alchup', :description => 'Nueva descripcion', :latitude => 0, :longitude => 0, :notes => 'Nueva nota'}
+      end
+      it "changes tank attributes" do
+        @tank.reload
+        expect(@tank.title).to eq("Nuevo Alchup")
+        expect(@tank.description).to eq("Nueva descripcion")
+        expect(@tank.latitude).to eq(0)
+        expect(@tank.longitude).to eq(0)
+        expect(@tank.notes).to eq("Nueva nota")
+      end
+
+      it "redirects to updated tank page" do
+        expect(response).to redirect_to(@tank)
+      end
+    end
+
+    describe "with invalid params" do
+      before(:each) do
+        put :update,  :id => @tank.id,:tank => {:title => ''}
+      end
+      it "renders the edit form" do
+        expect(response).to render_template(:edit)
+      end
+      it "the tank has validation errors" do
+        expect(assigns(:tank).errors.any?).to be true
+      end
+    end
+  end
+
 
 end

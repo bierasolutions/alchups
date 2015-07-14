@@ -10,7 +10,6 @@ class TanksController < ApplicationController
     else
       render 'new'
     end
-
   end
 
   def show
@@ -19,6 +18,19 @@ class TanksController < ApplicationController
 
   def index
     @tanks = Tank.all
+  end
+
+  def edit
+    @tank = Tank.find(params[:id])
+  end
+
+  def update
+    @tank = Tank.find(params[:id])
+    if @tank.update_attributes(tank_params)
+      redirect_to @tank
+    else
+      render 'edit'
+    end
   end
 
   private
