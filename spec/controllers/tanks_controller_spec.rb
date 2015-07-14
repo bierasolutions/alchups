@@ -123,5 +123,22 @@ RSpec.describe TanksController, :type => :controller do
     end
   end
 
+  describe "DELETE destroy" do
+    before(:each) do
+      @tank = FactoryGirl.create(:tank)
+    end
+
+    it "deletes the Tank" do
+        expect {
+          delete :destroy, :id => @tank.id
+        }.to change(Tank, :count).by(-1)
+    end
+
+    it "redirects to index page" do
+      delete :destroy, :id => @tank.id
+      expect(response).to redirect_to(tanks_url)
+    end
+  end
+
 
 end

@@ -3,7 +3,8 @@
 <ul>
   <% @tanks.each do |tank| %>
     <li>
-      <%= link_to tank.title, tank %> <%= link_to "editar", edit_tank_path(tank) %> <%= link_to "borrar", '#' %>
+      <%= link_to tank.title, tank %> | <%= link_to "editar", edit_tank_path(tank) %> <%= link_to "borrar", tank, method: :delete, 
+      data: {confirm: "¿Estas seguro?"} %>
     </li>
   <% end %>
 </ul>  

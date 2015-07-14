@@ -33,6 +33,11 @@ class TanksController < ApplicationController
     end
   end
 
+  def destroy
+    Tank.find(params[:id]).destroy
+    redirect_to tanks_url
+  end
+
   private
     def tank_params
       params.require(:tank).permit(:title, :description, :latitude,:longitude, :notes)
