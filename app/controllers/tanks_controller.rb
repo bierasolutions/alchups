@@ -38,6 +38,16 @@ class TanksController < ApplicationController
     redirect_to tanks_url
   end
 
+  def order_by_title
+    @tanks = Tank.all.order(:title)
+    render 'index' 
+  end
+
+  def order_by_id
+    @tanks = Tank.all.order(:id)
+    render 'index'
+  end
+
   private
     def tank_params
       params.require(:tank).permit(:title, :description, :latitude,:longitude, :notes)

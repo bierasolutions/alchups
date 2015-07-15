@@ -1,9 +1,11 @@
 <h1>Aljibes</h1>
 
+<%= link_to "Ordenar(A-Z)", order_by_title_path %> <%= link_to "Ordenar por ID", order_by_id_path %>
+
 <ul>
   <% @tanks.each do |tank| %>
     <li>
-      <%= link_to tank.title, tank %> | <%= link_to "editar", edit_tank_path(tank) %> <%= link_to "borrar", tank, method: :delete, 
+      <%= link_to tank.id, tank %> <%= link_to tank.title, tank %> | <%= link_to "editar", edit_tank_path(tank) %> <%= link_to "borrar", tank, method: :delete, 
       data: {confirm: "¿Estas seguro?"} %>
     </li>
   <% end %>

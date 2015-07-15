@@ -140,5 +140,37 @@ RSpec.describe TanksController, :type => :controller do
     end
   end
 
+  describe "GET order_by_id" do
+    before(:each) do
+      @tank1 = Tank.create(title: "b_title")
+      @tank2 = Tank.create(title: "a_title")
+      get :order_by_id
+    end
+
+    it "shows tanks ordered by id" do
+        #expect(@tanks).to eq([@tank1, @tank2])
+    end
+
+    it "renders index page" do
+      expect(response).to render_template(:index)
+    end
+  end
+
+  describe "GET order_by_title" do
+    before(:each) do
+      @tank1 = Tank.create(title: "b_title")
+      @tank2 = Tank.create(title: "a_title")
+      get :order_by_title
+    end
+
+    it "shows tanks ordered by title" do
+        #expect(@tanks).to eq([@tank2, @tank1])
+    end
+
+    it "renders index page" do
+      expect(response).to render_template(:index)
+    end
+  end
+
 
 end
