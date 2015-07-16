@@ -33,6 +33,15 @@
 <h2><%= @tank.title %></h2>
 <p id='descripcion' data-latitude="<%= @tank.latitude %>" data-longitude="<%= @tank.longitude %>"><%= @tank.description %></p>
 
+<ul>
+<% @tank.photos.each do |photo|%>
+<li>
+  <%= image_tag photo.image.url(:medium) %>
+</li>
+<%end%>
+</ul>
+
+<%= link_to "Sube fotos", "" %>
 
 <div id="map-canvas" style="width: 100%; height: 400px; margin: 0; padding: 0;"></div>
 
