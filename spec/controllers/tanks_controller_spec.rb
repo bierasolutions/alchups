@@ -148,7 +148,7 @@ RSpec.describe TanksController, :type => :controller do
     end
 
     it "shows tanks ordered by id" do
-        #expect(@tanks).to eq([@tank1, @tank2])
+        expect(assigns(:tanks)).to eq([@tank1, @tank2])
     end
 
     it "renders index page" do
@@ -164,7 +164,7 @@ RSpec.describe TanksController, :type => :controller do
     end
 
     it "shows tanks ordered by title" do
-        #expect(@tanks).to eq([@tank2, @tank1])
+        expect(assigns(:tanks)).to eq([@tank2, @tank1])
     end
 
     it "renders index page" do

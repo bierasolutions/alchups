@@ -17,7 +17,7 @@ class TanksController < ApplicationController
   end
 
   def index
-    @tanks = Tank.all
+    @tanks = Tank.all.order(params[:sort])
   end
 
   def edit
