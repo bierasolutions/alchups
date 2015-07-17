@@ -1,12 +1,86 @@
-<h1>Aljibes</h1>
+  
 
-<%= link_to "Ordenar(A-Z)", order_by_title_path %> <%= link_to "Ordenar por ID", order_by_id_path %>
+  
+<nav class="navbar navbar-inverse">
+	<div class="container">
+	  <div class="navbar-header">
+        <a class="navbar-brand" href="#">Alchups</a>
+      </div>
+	</div>
+</nav>
 
-<ul>
-  <% @tanks.each do |tank| %>
-    <li>
-      <%= link_to tank.id, tank %> <%= link_to tank.title, tank %> | <%= link_to "editar", edit_tank_path(tank) %> <%= link_to "borrar", tank, method: :delete, 
-      data: {confirm: "¿Estas seguro?"} %>
-    </li>
-  <% end %>
-</ul>  
+<div class="container">
+	<h2>Lista de aljibes</h2>
+	<div class="row">
+	  <div class="col-xs-12 col-md-6">
+		<%= link_to "Ordenar(A-Z)", order_by_title_path, class: "btn btn-primary btn-sm" %> 
+		<%= link_to "Ordenar por ID", order_by_id_path, class: "btn btn-primary btn-sm" %>
+		<table class="table table-striped" id="alchups">
+			<tr>
+				<th>#</th><th>Nombre</th><th></th><th></th>
+			</tr>
+			<% @tanks.each do |tank| %>
+				<tr data-latitude="<%= tank.latitude %>" data-longitude="<%= tank.longitude %>"
+					data-iden = "<%= tank.id %>" data-title = "<%= tank.title %>">
+					<td><%= link_to tank.id, tank %></td>
+					<td><%= link_to tank.title, tank %></td>
+					<td><%= link_to "editar", edit_tank_path(tank) %></td>
+					<td><%= link_to "borrar",tank, method: :delete, data: {confirm: "¿Estas seguro?"} %></td>
+				</tr>
+			<% end %>
+		</table>
+		 
+	  </div>
+	  <div class="col-xs-6 col-md-6" id="map-canvas" style="height: 500px; margin-top: 40px; padding: 0;">
+	  </div>	
+	</div>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+
+	  function initialize() {
+
+
+	    var posicion = new google.maps.LatLng(41.89, 0.3179)
+
+	    var mapOptions = {
+	      center: posicion,
+	      zoom: 3,
+	      mapTypeId: google.maps.MapTypeId.SATELLITE
+	    };
+
+	    var map = new google.maps.Map(document.getElementById('map-canvas'),
+	        mapOptions);
+
+
+
+	    $('#alchups').find('tr').each(function() {
+	    	var lati = $(this).data("latitude");
+	    	var longi = $(this).data("longitude");
+	    	var iden = $(this).data("iden");
+	    	var title = $(this).data("title");
+	    	var contentInfo = '<a href="/tanks/'+ iden +'">'+ title +'</a>';
+			//var contentInfo = $(this).html();
+	    	//console.log(contentInfo);
+
+	    	var infowindow = new google.maps.InfoWindow({
+      		  content: contentInfo
+  			});
+
+    		var marker = new google.maps.Marker({
+	    	  position: new google.maps.LatLng(lati, longi),
+	    	  map: map,
+	    	  title: 'soy un alchup'
+	    	});
+
+	    	google.maps.event.addListener(marker, 'click', function() {
+       		  infowindow.open(map,marker);
+   			});
+    	
+ 		 });
+
+	    
+	  }
+	  google.maps.event.addDomListener(window, 'load', initialize);
+</script>

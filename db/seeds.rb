@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Tank.create(title: "ALCHUP DE LA TORRE BASO", description: "Una descripcion", latitude: 41.8900475, longitude: 0.31794049999999996, notes: "TRANSFORMADO EN PISCINA AZUL")
 
-50.times do |n|
+30.times do |n|
   title  = Faker::Lorem.word.upcase
   description = Faker::Lorem.paragraph
   latitude = Faker::Number.decimal(2)
