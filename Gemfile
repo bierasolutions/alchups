@@ -3,6 +3,7 @@ ruby "2.2.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
+gem 'pg'
 gem "paperclip", "~> 4.3"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -16,9 +17,9 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'faker', '~> 1.4.3'
 
 group :development, :test do
+  gem 'faker', '~> 1.4.3'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
