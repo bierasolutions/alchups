@@ -29,8 +29,12 @@
   </script>  
 
 <h2><%= @tank.title %></h2>
+<%= link_to "Subir foto", new_tank_photo_path(@tank) %>
+<%= link_to "Editar", edit_tank_path(@tank) %>
+<%= link_to "Borrar", @tank, method: :delete, data: {confirm: "¿Estas seguro?"} %>
 <p id='descripcion' data-latitude="<%= @tank.latitude %>" data-longitude="<%= @tank.longitude %>"><%= @tank.description %></p>
 
+<% unless @tank.photos.empty? %>
 <ul>
 <% @tank.photos.each do |photo|%>
 <li>
@@ -38,8 +42,7 @@
 </li>
 <%end%>
 </ul>
-
-<%= link_to "Sube fotos", "" %>
+<%end%>
 
 <div id="map-canvas" style="width: 100%; height: 400px; margin: 0; padding: 0;"></div>
 

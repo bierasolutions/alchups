@@ -1,3 +1,4 @@
+<h2>Añadir foto a <%= @photo.tank.title %></h2>
 <%= form_for @photo, :url => tank_photos_path(@photo.tank), :html => { :multipart => true } do |form| %>
   <%= form.file_field :image %>
   <input type="submit">
