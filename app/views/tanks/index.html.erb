@@ -1,6 +1,9 @@
 	<h2>Lista de aljibes</h2>
 	<div class="row">
 	  <div class="col-xs-12 col-md-6">
+	  <p>
+		<%= link_to "Nuevo Aljibe", new_tank_path, class: "btn btn-success btn-sm" %>
+		</p>
 		<%= link_to "Ordenar(A-Z)", order_by_title_path, class: "btn btn-primary btn-sm" %> 
 		<%= link_to "Ordenar por ID", order_by_id_path, class: "btn btn-primary btn-sm" %>
 		<table class="table table-striped" id="alchups">

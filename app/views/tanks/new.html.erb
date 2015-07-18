@@ -1,24 +1,17 @@
 <h1>Nuevo Aljibe</h1>
 
 <div class="row">
-  <div class="">
-    <%= form_for(@tank) do |f| %>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-
-      <%= f.label :description %>
-      <%= f.text_area :description %>
-
-      <%= f.label :latitude %>
-      <%= f.text_field :latitude %>
-
-      <%= f.label :longitude %>
-      <%= f.text_field :longitude %>
-
-      <%= f.label :notes %>
-      <%= f.text_area :notes %>      
-
-      <%= f.submit "Alta Aljibe", class: "" %>
+  <div class="well bs-component">
+    <%= form_for @tank, :html => {:class => "form-horizontal"} do |f| %>
+      <fieldset>
+      <%= render partial: "form", locals: {f: f} %>      
+      <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <%= f.submit "Alta Aljibe", class: "btn btn-primary" %>
+            <%= link_to "Volver atrás", tanks_path, class: "btn btn-default" %>
+          </div>
+        </div>
+      </fieldset>
     <% end %>
   </div>
 </div>

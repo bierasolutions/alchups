@@ -1,5 +1,22 @@
 <h2>Añadir foto a <%= @photo.tank.title %></h2>
-<%= form_for @photo, :url => tank_photos_path(@photo.tank), :html => { :multipart => true } do |form| %>
-  <%= form.file_field :image %>
-  <input type="submit">
-<% end %>
+<div class="row">
+  <div class="well bs-component">
+    <%= form_for @photo, :url => tank_photos_path(@photo.tank), :html => { :multipart => true, :class => "form-horizontal" } do |form| %>
+      <fieldset>
+        <div class="form-group">
+          <%= form.label :image, :class => "col-lg-2 control-label" %>
+          <div class="col-lg-10">
+          <%= form.file_field :image, :class => "form-control" %>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <input type="submit" class="btn btn-primary">
+            <%= link_to "Volver atrás", tank_path(@photo.tank), class: "btn btn-default" %>
+          </div>
+        </div>  
+      </fieldset>
+    <% end %>
+  </div>
+</div>
