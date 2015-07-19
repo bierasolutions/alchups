@@ -10,6 +10,12 @@ class PhotosController < ApplicationController
     redirect_to tank_path(tank)
   end
 
+  def destroy
+    tank = Tank.find(params[:tank_id])
+    tank.photos.find(params[:id]).destroy
+    redirect_to tank_path(tank)
+  end
+
   private 
     def photo_params
       params.require(:photo).permit(:image)
