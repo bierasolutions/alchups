@@ -18,11 +18,12 @@
     <div class="navbar-header">
         <a class="navbar-brand" href="/tanks">Alchups</a>
       </div>
-
+      <% if admin_signed_in? %>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/">Página pública</a></li>
-        <li><a href="#">Salir</a></li>
+        <li><%= link_to "Salir", destroy_admin_session_path, :method => :delete %></li>
       </ul>
+      <% end %>
   </div>
 </nav>
 
