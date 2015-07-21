@@ -10,6 +10,8 @@ RSpec.describe TanksController, :type => :controller do
     {title: ''}
   end
 
+  login_admin
+
   describe "GET 'new'" do
     before(:each) do
       get :new

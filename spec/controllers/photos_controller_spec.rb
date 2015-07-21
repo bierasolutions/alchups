@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe PhotosController, :type => :controller do
+  login_admin
   describe "GET 'new'" do
     before(:each) do
       @tank = FactoryGirl.create(:tank)
