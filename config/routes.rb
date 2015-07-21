@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'pages#index'
   devise_for :admins
 
   devise_scope :admin do
