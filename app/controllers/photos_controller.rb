@@ -1,4 +1,4 @@
-class PhotosController < ApplicationController
+class PhotosController < AdminController
   def new
     tank = Tank.find(params[:tank_id])
     @photo = Photo.new(tank: tank)

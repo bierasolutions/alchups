@@ -1,4 +1,4 @@
-class TanksController < ApplicationController
+class TanksController < AdminController
   def new
     @tank = Tank.new
   end
