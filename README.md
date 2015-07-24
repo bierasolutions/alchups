@@ -10,3 +10,6 @@ Es una aplicación Ruby on Rails que sigue las convenciones habituales, cuyas de
 - Ruby on Rails 4.2.1
 - Imagemagick
 - PostgreSQL (o SQLite para entornos de desarrollo)
+
+[![Travis](https://travis-ci.org/bierasolutions/alchups.svg?branch=master)](https://travis-ci.org/bierasolutions/alchups)
+[![Code Climate](https://codeclimate.com/github/bierasolutions/alchups/badges/gpa.svg)](https://codeclimate.com/github/bierasolutions/alchups)
