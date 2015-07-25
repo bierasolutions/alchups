@@ -29,9 +29,8 @@
 	</div>
 
 <script type="text/javascript">
-
 	  function initialize() {
-
+	  	var infowindow = new google.maps.InfoWindow();
 
 	    var posicion = new google.maps.LatLng(41.89, 0.3179)
 
@@ -44,21 +43,13 @@
 	    var map = new google.maps.Map(document.getElementById('map-canvas'),
 	        mapOptions);
 
-
-
 	    $('#alchups').find('tr').each(function() {
 	    	var lati = $(this).data("latitude");
 	    	var longi = $(this).data("longitude");
 	    	var iden = $(this).data("iden");
 	    	var title = $(this).data("title");
 	    	var contentInfo = '<a href="/tanks/'+ iden +'">'+ title +'</a>';
-			//var contentInfo = $(this).html();
-	    	//console.log(contentInfo);
-
-	    	var infowindow = new google.maps.InfoWindow({
-      		  content: contentInfo
-  			});
-
+			
     		var marker = new google.maps.Marker({
 	    	  position: new google.maps.LatLng(lati, longi),
 	    	  map: map,
@@ -66,12 +57,11 @@
 	    	});
 
 	    	google.maps.event.addListener(marker, 'click', function() {
+	    			infowindow.setContent(contentInfo)
        		  infowindow.open(map,marker);
    			});
     	
- 		 });
-
-	    
+ 		 });	    
 	  }
 	  google.maps.event.addDomListener(window, 'load', initialize);
 </script>
