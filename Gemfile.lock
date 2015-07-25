@@ -54,6 +54,7 @@ GEM
     cocaine (0.5.7)
       climate_control (>= 0.0.3, < 1.0)
     columnize (0.9.0)
+    coordinate-converter (0.1.0)
     debug_inspector (0.0.2)
     devise (3.5.1)
       bcrypt (~> 3.0)
@@ -200,6 +201,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk (< 2.0)
   byebug
+  coordinate-converter
   devise
   factory_girl_rails
   faker (~> 1.4.3)
@@ -218,3 +220,6 @@ DEPENDENCIES
   unicorn
   unicorn-rails
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.5

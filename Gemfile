@@ -24,6 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'unicorn'
 gem 'unicorn-rails'
 
+gem 'coordinate-converter'
+
 group :development, :test do
   gem 'faker', '~> 1.4.3'
   gem 'byebug'
