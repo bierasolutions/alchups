@@ -11,7 +11,9 @@
 				<th>#</th><th>Nombre</th><th></th><th></th>
 			</tr>
 			<% @tanks.each do |tank| %>
-				<tr data-latitude="<%= tank.latitude %>" data-longitude="<%= tank.longitude %>"
+
+				<% coor = Coordinates.utm_to_lat_long("WGS-84", tank.latitude, tank.longitude, "30N") %>
+				<tr data-latitude="<%= coor[:lat] %>" data-longitude="<%= coor[:long] %>"
 					data-iden = "<%= tank.id %>" data-title = "<%= tank.title %>">
 					<td><%= link_to tank.id, tank %></td>
 					<td><%= link_to tank.title, tank %></td>

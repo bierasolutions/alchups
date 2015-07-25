@@ -34,7 +34,8 @@
 <%= link_to "Editar", edit_tank_path(@tank) %> |
 <%= link_to "Borrar", @tank, method: :delete, data: {confirm: "¿Estas seguro?"} %>
 </p>
-<p id='descripcion' data-latitude="<%= @tank.latitude %>" data-longitude="<%= @tank.longitude %>"><%= @tank.description %></p>
+<% coor = Coordinates.utm_to_lat_long("WGS-84", @tank.latitude, @tank.longitude, "30N") %>
+<p id='descripcion' data-latitude="<%= coor[:lat] %>" data-longitude="<%= coor[:long] %>"><%= @tank.description %></p>
 
 <% unless @tank.photos.empty? %>
 <ul class="list-inline">
