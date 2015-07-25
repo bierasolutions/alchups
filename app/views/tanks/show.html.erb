@@ -1,31 +1,7 @@
   
 
   <script type="text/javascript">
-
-	  function initialize() {
-
-	  	var place = document.getElementById('descripcion');
-
-	    var lat = place.dataset.latitude;
-	    var longi = place.dataset.longitude;
-
-	    var posicion = new google.maps.LatLng(lat, longi)
-
-	    var mapOptions = {
-	      center: posicion,
-	      zoom: 15,
-	      mapTypeId: google.maps.MapTypeId.SATELLITE
-	    };
-
-	    var map = new google.maps.Map(document.getElementById('map-canvas'),
-	        mapOptions);
-
-	    var marker = new google.maps.Marker({
-	    position: posicion,
-	    map: map
-	    });
-	  }
-	  google.maps.event.addDomListener(window, 'load', initialize);
+	 google.maps.event.addDomListener(window, 'load', initializeShow);
   </script>  
 
 <h2><%= @tank.title %></h2>
