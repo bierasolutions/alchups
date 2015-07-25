@@ -8,16 +8,10 @@
 	function initializeIndex() {
 	  	var infowindow = new google.maps.InfoWindow();
 
-	    var posicion = new google.maps.LatLng(41.89, 0.3179)
+	    var mapOptions = map_options(41.89, 0.3179,11);
 
-	    var mapOptions = {
-	      center: posicion,
-	      zoom: 11,
-	      mapTypeId: google.maps.MapTypeId.SATELLITE
-	    };
-
-	    var map = new google.maps.Map(document.getElementById('map-canvas'),
-	        mapOptions);
+	    
+	    var map = makeMap(mapOptions);
 
 	    $('#alchups').find('tr').each(function() {
 	    	var lati = $(this).data("latitude");
@@ -26,11 +20,7 @@
 	    	var title = $(this).data("title");
 	    	var contentInfo = '<a href="/tanks/'+ iden +'">'+ title +'</a>';
 			
-    		var marker = new google.maps.Marker({
-	    	  position: new google.maps.LatLng(lati, longi),
-	    	  map: map,
-	    	  title: 'soy un alchup'
-	    	});
+    		var marker = makeMarker(lati,longi,map);
 
 	    	google.maps.event.addListener(marker, 'click', function() {
 	    			infowindow.setContent(contentInfo)
@@ -47,19 +37,34 @@
 	    var lat = place.dataset.latitude;
 	    var longi = place.dataset.longitude;
 
-	    var posicion = new google.maps.LatLng(lat, longi)
+	    var mapOptions = map_options(lat,longi,15);
+
+	    var map = makeMap(mapOptions);
+
+	    makeMarker(lat,longi,map);
+	}
+
+	function map_options(lati,longi,ZOOM){
+		var posicion = new google.maps.LatLng(lati, longi)
 
 	    var mapOptions = {
 	      center: posicion,
-	      zoom: 15,
+	      zoom: ZOOM,
 	      mapTypeId: google.maps.MapTypeId.SATELLITE
 	    };
 
-	    var map = new google.maps.Map(document.getElementById('map-canvas'),
-	        mapOptions);
+	    return mapOptions;
+	}
 
-	    var marker = new google.maps.Marker({
-	    position: posicion,
-	    map: map
+	function makeMap(mapOptions){
+		return new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+	}
+
+	function makeMarker(lati,longi,mapa){
+		var marker = new google.maps.Marker({
+	    	position: new google.maps.LatLng(lati, longi),
+	        map: mapa
 	    });
+
+	    return marker;
 	}
