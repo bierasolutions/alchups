@@ -1,4 +1,13 @@
+Rutas:
+<ul>
+<% @routes.each do |tank| %>
+  <li>
+    Nombre: <%= tank.title %>
+  </li>
+<% end %>
+</ul>
 
+Alchups:
 <ul>
 <% @tanks.each do |tank| %>
   <li data-latitude="<%= tank.latitude %>" data-longitude="<%= tank.longitude %>">
