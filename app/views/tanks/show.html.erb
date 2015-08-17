@@ -10,6 +10,9 @@
 <%= link_to "Editar", edit_tank_path(@tank) %> |
 <%= link_to "Borrar", @tank, method: :delete, data: {confirm: "¿Estas seguro?"} %>
 </p>
+<% if @tank.route %>
+<h4>Ruta: <%= @tank.route%></h4> 
+<% end %>
 <h3>Descripción</h3>
 <p id='descripcion' data-latitude="<%= @tank.coordinates[:lat] %>" data-longitude="<%= @tank.coordinates[:long] %>"><%= @tank.description %></p>
 <% if @tank.notes and not @tank.notes.empty? %>

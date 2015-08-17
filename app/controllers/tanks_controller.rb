@@ -50,6 +50,6 @@ class TanksController < AdminController
 
   private
     def tank_params
-      params.require(:tank).permit(:title, :description, :latitude,:longitude, :notes)
+      params.require(:tank).permit(:title, :description, :latitude,:longitude, :notes, :route_id)
     end
 end
