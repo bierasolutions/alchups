@@ -31,6 +31,6 @@
 <div class="form-group">
   <%= f.label :route_id, "Ruta", :class => "col-lg-2 control-label" %>
   <div class="col-lg-10">
-  <%= f.select :route_id, routes_options %>
+  <%= f.select :route_id, routes_options, {:include_blank => 'Elige una ruta'} %>
   </div>
 </div>
