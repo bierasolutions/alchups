@@ -4,6 +4,6 @@ class Tank < ActiveRecord::Base
   belongs_to :route
 
   def coordinates
-  	Coordinates.utm_to_lat_long("WGS-84", self.latitude, self.longitude, "30N")
+  	Coordinates.utm_to_lat_long("WGS-84", self.y, self.x, "30N")
   end
 end

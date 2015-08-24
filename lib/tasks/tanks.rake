@@ -7,8 +7,8 @@ namespace :tanks do
       Tank.create!(
         :title => row[1],
         :notes => row[4],
-        :longitude => row[5],
-        :latitude => row[6]
+        :x => row[5],
+        :y => row[6]
       )
     end
   end
