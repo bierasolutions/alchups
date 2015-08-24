@@ -5,12 +5,18 @@
 //= require_tree .
 
 $(document).ready(function() {
-	homeMap();
+	if($('#home').length){
+		homeMap();
+	}else if($('#tanksIndex').length){
+		initializeIndex();	
+	}else{
+		initializeShow();	
+	}
 });
 	
 	function homeMap(){
 		var options = mapOptions(41.89, 0.3179,12);
-		var map = makeMap(options, 'map-home');
+		var map = makeMap(options);
 
 		$('#alchups li').each(function() {
     	var lati = $(this).data("latitude");
@@ -80,7 +86,7 @@ $(document).ready(function() {
 
 	function initializeShow() {
 
-	  	var place = document.getElementById('descripcion');
+	  	var place = document.getElementById('description');
 
 	    var lat = place.dataset.latitude;
 	    var longi = place.dataset.longitude;
@@ -104,11 +110,8 @@ $(document).ready(function() {
 	    return mapOptions;
 	}
 
-	function makeMap(mapOptions, id){
-		if(!id){
-			id = 'map-canvas';
-		}
-		return new google.maps.Map(document.getElementById(id), mapOptions);
+	function makeMap(mapOptions){
+		return new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 	}
 
 	function makeMarker(lati,longi,mapa){

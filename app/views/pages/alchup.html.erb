@@ -1,5 +1,8 @@
+<div id="alchup">
 <h2><%=@tank.title%></h2>
-<p><%=@tank.description%></p>
+<p id="description" data-latitude="<%= @tank.latitude %>" data-longitude="<%= @tank.longitude %>">
+<%=@tank.description%>
+</p>
 
 <% unless @tank.photos.empty? %>
   Fotos:
@@ -7,3 +10,8 @@
 <%= image_tag photo.image.url(:medium), size: "80x80" %>
   <%end%>
 <%end%>
+
+<div id="map-canvas" style="height: 300px; weight:100%">
+</div>  
+
+</div>
