@@ -1,3 +1,7 @@
+
+<div id="map-home" style="height: 300px; weight:100%">
+</div>  
+
 Rutas:
 <ul>
 <% @routes.each do |tank| %>
@@ -8,7 +12,7 @@ Rutas:
 </ul>
 
 Alchups:
-<ul>
+<ul id="alchups">
 <% @tanks.each do |tank| %>
   <li data-latitude="<%= tank.latitude %>" data-longitude="<%= tank.longitude %>">
     Nombre: <%= tank.title %>

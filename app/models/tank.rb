@@ -6,4 +6,12 @@ class Tank < ActiveRecord::Base
   def coordinates
   	Coordinates.utm_to_lat_long("WGS-84", self.y, self.x, "30N")
   end
+
+  def latitude
+    coordinates[:lat]
+  end
+
+  def longitude
+    coordinates[:long]
+  end
 end
