@@ -15,16 +15,7 @@ Alchups:
 <ul id="alchups">
 <% @tanks.each do |tank| %>
   <li data-latitude="<%= tank.latitude %>" data-longitude="<%= tank.longitude %>">
-    Nombre: <%= tank.title %>
-    <br/>
-    Descripción: <%= tank.description %>
-    <br/>
-    <% unless tank.photos.empty? %>
-    Fotos:
-    <% tank.photos.each do |photo|%>
-    <%= image_tag photo.image.url(:medium), size: "80x80" %>
-    <%end%>
-    <%end%>
+    <%=link_to tank.title, alchup_path(tank) %>
   </li>
 <% end %>
 </ul>

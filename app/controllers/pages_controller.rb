@@ -4,4 +4,8 @@ class PagesController < ApplicationController
     @tanks = Tank.all
     @routes = Route.all
   end
+
+  def alchup
+    @tank = Tank.find(params[:id])
+  end
 end

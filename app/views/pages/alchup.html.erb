@@ -1,0 +1,9 @@
+<h2><%=@tank.title%></h2>
+<p><%=@tank.description%></p>
+
+<% unless @tank.photos.empty? %>
+  Fotos:
+<% @tank.photos.each do |photo|%>
+<%= image_tag photo.image.url(:medium), size: "80x80" %>
+  <%end%>
+<%end%>

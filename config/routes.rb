@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#index'
+
+  get 'alchup/:id' => 'pages#alchup', as: :alchup
   devise_for :admins
 
   devise_scope :admin do
