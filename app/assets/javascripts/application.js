@@ -17,11 +17,13 @@ $(document).ready(function() {
 	function homeMap(){
 		var options = mapOptions(41.89, 0.3179,12);
 		var map = makeMap(options);
+		var infowindow = new google.maps.InfoWindow();
 
 		$('#alchups li').each(function() {
     	var lati = $(this).data("latitude");
     	var longi = $(this).data("longitude");
-    	var contentInfo = '';
+    	console.log($(this).html())
+    	var contentInfo = $(this).html();
   		var marker = makeMarker(lati,longi,map);
     	google.maps.event.addListener(marker, 'click', function() {
     			infowindow.setContent(contentInfo)
