@@ -16,18 +16,22 @@ end
 
 class KmlPathExtractor
   @coordinates
+  @coordinates_groups
   def initialize(input)
     @coordinates = []
-    coordinates_groups(input).each do |group|
-      @coordinates += KmlPathExtractor.coordinates_from(group.content)
-    end
+    @coordinates_groups = []
+    parse_coordinates(input)
+  end
+
+  def coordinates_groups
+    @coordinates_groups
   end
 
   def coordinates
     @coordinates
   end
 
-  def self.coordinates_from(input)
+  def self.coordinates_from input
     coordinates = []
     input.strip.split(" ").each do |part|
       coordinates << Coordinate.new(part)
@@ -36,8 +40,12 @@ class KmlPathExtractor
   end
 
   private
-    def coordinates_groups input
+    def parse_coordinates input
       xml = Nokogiri::XML(input)
-      xml.css("MultiGeometry coordinates")
+      xml.css("MultiGeometry coordinates").each do |group|
+        coordinates = KmlPathExtractor.coordinates_from(group.content)
+        @coordinates_groups << coordinates
+        @coordinates += coordinates
+      end
     end
 end
