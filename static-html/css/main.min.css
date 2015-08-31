@@ -1,0 +1,383 @@
+/***************************************************/
+/********** VARIABLES: FONTS, COLORS, etc **********/
+/***************************************************/
+.wrapper {
+  width: 1355px;
+  max-width: 94%;
+  margin: 0 auto; }
+
+/*************************************/
+/********** RESET AND SETUP **********/
+/*************************************/
+*, html, body, input, textarea, button, input[type="search"], input[type="text"], input[type="email"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+input, textarea, button {
+  font-family: "Merriweather", Arial, sans-serif; }
+
+.clear {
+  clear: both;
+  overflow: auto;
+  zoom: 1; }
+
+html {
+  font-size: 16px;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-y: scroll; }
+
+body {
+  min-height: 100%;
+  font-size: 100%; }
+
+body {
+  font-family: "Merriweather", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+  height: 100%;
+  text-align: center;
+  color: #000;
+  padding: 0;
+  margin: 0;
+  background-color: #FFF5DB; }
+
+/***************************************************/
+/******* COMMON STYLES: LINKS, BUTTONS, etc ********/
+/***************************************************/
+img {
+  max-width: 100%;
+  height: auto; }
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+a.btn.primary, button.btn.primary, input.btn.primary {
+  display: inline-block;
+  position: relative;
+  padding: 20px 35px;
+  color: #000;
+  border: 2px solid #000;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 1px;
+  font-size: 0.9375rem;
+  -webkit-transition: 0.05s;
+  -moz-transition: 0.05s;
+  transition: 0.05s; }
+  a.btn.primary span.arrow, button.btn.primary span.arrow, input.btn.primary span.arrow {
+    font-size: 1.25rem; }
+  a.btn.primary:hover, button.btn.primary:hover, input.btn.primary:hover {
+    border-color: #F58323;
+    color: #F58323;
+    background-color: #fff; }
+
+/*********** MAIN STYLES ************/
+.site {
+  text-align: left; }
+
+.main-header {
+  padding-top: 15px; }
+  .main-header .main-menu {
+    text-align: right;
+    margin-bottom: 4em; }
+    .main-header .main-menu ul {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+      .main-header .main-menu ul li {
+        font-weight: 600;
+        font-family: "Raleway", sans-serif;
+        margin-left: 40px;
+        font-size: 0.8125rem;
+        display: inline-block;
+        text-transform: uppercase; }
+        .main-header .main-menu ul li a {
+          color: #F58323;
+          text-decoration: none;
+          letter-spacing: 0.1em; }
+          .main-header .main-menu ul li a:hover {
+            text-decoration: underline; }
+
+.site-description {
+  text-align: center; }
+  .site-description p {
+    position: relative;
+    display: inline-block;
+    padding: 0px 17px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 0.2em; }
+    .site-description p:before, .site-description p:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 8px;
+      left: 0px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 4px 0 4px;
+      border-color: #F58323 transparent transparent transparent; }
+    .site-description p:after {
+      left: auto;
+      right: 0px; }
+
+.main-map {
+  margin-bottom: 5px;
+  height: 620px;
+  background-color: #fff; }
+
+.main-description {
+  background-color: #F58323;
+  color: #fff;
+  text-align: center;
+  padding: 50px 0px;
+  font-family: "Merriweather", Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75em;
+  margin-bottom: 5px; }
+  .main-description .wrapper {
+    width: 65%; }
+
+.routes {
+  margin-bottom: 5px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  box-align: start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  -o-align-items: flex-start;
+  align-items: flex-start;
+  -ms-flex-align: start;
+  -webkit-align-content: flex-start;
+  -moz-align-content: flex-start;
+  align-content: flex-start;
+  -ms-flex-line-pack: start;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify; }
+  .routes .route {
+    text-align: center;
+    display: inline-block;
+    width: 49.81%;
+    padding-bottom: 25px;
+    border: 1px solid transparent; }
+    .routes .route span.label {
+      position: relative;
+      display: inline-block;
+      font-weight: 700;
+      font-family: "Raleway", sans-serif;
+      color: #B2E382;
+      padding: 15px 0px;
+      font-size: 0.9375rem;
+      text-transform: uppercase;
+      z-index: 2;
+      line-height: 0px;
+      margin-bottom: 3em; }
+      .routes .route span.label strong {
+        font-family: Arial, sans-serif; }
+      .routes .route span.label:before {
+        position: absolute;
+        display: inline-block;
+        content: "";
+        top: -1px;
+        left: -80%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 55px 75px 0 75px;
+        border-color: #ffffff transparent transparent transparent;
+        z-index: -1; }
+    .routes .route h2 {
+      font-size: 1.25rem;
+      font-weight: 400;
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin: 0;
+      padding: 0; }
+    .routes .route p {
+      margin: 0;
+      padding: 0;
+      line-height: 0px; }
+    .routes .route:first-child {
+      background-color: #B2E382; }
+      .routes .route:first-child span.label {
+        color: #B2E382; }
+    .routes .route:last-child {
+      background-color: #D4A9EF; }
+      .routes .route:last-child span.label {
+        color: #D4A9EF; }
+  .routes .route:hover {
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.1s;
+    transition: 0.1s;
+    border-color: #B9A366;
+    overflow: hidden; }
+    .routes .route:hover:first-child {
+      background-color: #C4F199; }
+    .routes .route:hover:last-child {
+      background-color: #E8CCF8; }
+
+.aljibes {
+  background-color: #fff;
+  text-align: center;
+  padding: 50px 25px;
+  margin-bottom: 5.5em; }
+  .aljibes h2 {
+    margin-bottom: 2em;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.45em;
+    text-transform: uppercase;
+    display: inline-block;
+    width: 47%; }
+  .aljibes .aljibes-list {
+    -webkit-columns: 4 8em;
+    -moz-columns: 4 8em;
+    columns: 4 8em;
+    -webkit-column-rule: 1px solid #FFF5DB;
+    -moz-column-rule: 1px solid #FFF5DB;
+    column-rule: 1px solid #FFF5DB; }
+    .aljibes .aljibes-list li {
+      margin: 0.25em 0;
+      font-family: "Merriweather", Arial, sans-serif;
+      font-weight: 400; }
+      .aljibes .aljibes-list li a {
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        padding: 4px 12px; }
+        .aljibes .aljibes-list li a:hover {
+          background-color: #FFF5DB;
+          color: #F58323;
+          text-decoration: underline; }
+
+.main-footer {
+  padding: 50px 0px;
+  background-color: #F58323;
+  color: #fff; }
+  .main-footer .wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    box-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    -ms-align-items: flex-start;
+    -o-align-items: flex-start;
+    align-items: flex-start;
+    -ms-flex-align: start;
+    -webkit-align-content: flex-start;
+    -moz-align-content: flex-start;
+    align-content: flex-start;
+    -ms-flex-line-pack: start;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: justify; }
+    .main-footer .wrapper .col ul {
+      -webkit-columns: 2 8em;
+      -moz-columns: 2 8em;
+      columns: 2 8em; }
+      .main-footer .wrapper .col ul li {
+        margin: 0.5em 0;
+        padding: 0px 0px 0px 15px;
+        position: relative; }
+        .main-footer .wrapper .col ul li:before {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          top: 6px;
+          left: 0;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 4px 0 4px 5px;
+          border-color: transparent transparent transparent #fff; }
+        .main-footer .wrapper .col ul li a {
+          color: #fff;
+          text-decoration: none; }
+          .main-footer .wrapper .col ul li a:hover {
+            text-decoration: underline; }
+    .main-footer .wrapper .col:first-child {
+      width: 20%; }
+    .main-footer .wrapper .col:nth-child(2) {
+      width: 60%;
+      text-align: left; }
+    .main-footer .wrapper .col:last-child {
+      width: 20%;
+      text-align: right; }
+
+.main-footer-project {
+  padding: 50px 0px;
+  background-color: #88C0BD;
+  text-align: center;
+  color: #fff;
+  font-family: "Merriweather", Arial, sans-serif;
+  font-size: 0.8125rem; }
+  .main-footer-project strong {
+    font-weight: 700; }
+  .main-footer-project a {
+    text-decoration: underline;
+    color: #fff; }
+    .main-footer-project a:hover {
+      color: #FFF5DB; }
