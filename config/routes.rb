@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root to: 'pages#index'
 
   get 'alchup/:id' => 'pages#alchup', as: :alchup
+  get 'ruta/:id' => 'pages#route', as: :route
+  get 'que-son' => 'pages#what', as: :what
+  get 'el-pueblo' => 'pages#town', as: :town
   devise_for :admins
 
   devise_scope :admin do

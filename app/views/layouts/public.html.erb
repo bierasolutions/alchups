@@ -17,8 +17,8 @@
       <div class="wrapper">
         <nav class="main-menu">
           <ul>
-            <li><a href="">¿Qué son los Alchups?</a></li>
-            <li><a href="">El pueblo</a></li>
+            <li><%= link_to "¿Qué son los Alchups?", what_path %></li>
+            <li><%= link_to "El pueblo", town_path %></li>
           </ul>
         </nav>
       </div><!-- .wrapper -->
@@ -43,10 +43,10 @@
           <div class="col">
             <ul>
               <li><%= link_to "Inicio", root_path %></li>
-              <li><%= link_to "Ruta 1 - De los lavaderos a las Forcas", "#" %></li>
-              <li><%= link_to "Ruta 2 - De Perera a la Heredad", "#" %></li>
-              <li><%= link_to "¿Qué son los Alchups?", "#"%></a></li>
-              <li><%= link_to "El pueblo", "#"%></li>
+              <li><%= link_to "Ruta 1 - De los lavaderos a las Forcas", route_path(1) %></li>
+              <li><%= link_to "Ruta 2 - De Perera a la Heredad", route_path(2) %></li>
+              <li><%= link_to "¿Qué son los Alchups?", what_path %></a></li>
+              <li><%= link_to "El pueblo", root_path %></li>
               <li><%= link_to "Web municipal", "http://www.sanestebandelitera.es/" %></li>
             </ul>
           </div><!-- .col -->
