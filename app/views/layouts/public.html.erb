@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <title>Alchups de San Esteban de Litera</title>
-  <%= stylesheet_link_tag    'public', media: 'all'%>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700,300' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag 'public', media: 'all'%>
   <%= csrf_meta_tags %>
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?v=3.exp">
@@ -10,11 +12,55 @@
   <%= javascript_include_tag "application" %>
 </head>
 <body>
+  <div class="site">
+    <header class="main-header">
+      <div class="wrapper">
+        <nav class="main-menu">
+          <ul>
+            <li><a href="">¿Qué son los Alchups?</a></li>
+            <li><a href="">El pueblo</a></li>
+          </ul>
+        </nav>
+      </div><!-- .wrapper -->
+      <div class="wrapper">
+        <div class="site-description">
+          <h1><%= link_to image_tag("logo.svg", :width=>"295", :height=>"32"), root_path%></h1><br />
+          <p>Descubre los Aljibes de San Esteban de la Litera</p>
+        </div><!-- .site-description -->
+      </div><!-- .wrapper -->
+    </header>
 
-<h1><%= link_to "Alchups de San Esteban de Litera", root_path%></h1>
+    <main>
+      <%= yield %>
+    </main>
 
-
-<%= yield %>
-  
+    <footer>
+      <div class="main-footer">
+        <div class="wrapper">
+          <div class="col">
+            LOGO
+          </div><!-- .col -->
+          <div class="col">
+            <ul>
+              <li><a href="#">Inicio</a></li>
+              <li><a href="#">Ruta 1 - Bla bla bla bla</a></li>
+              <li><a href="#">Ruta 2 - Lorem ipsum is not qeue</a></li>
+              <li><a href="#">¿Qué son los Alchups?</a></li>
+              <li><a href="#">El pueblo</a></li>
+              <li><a href="#">Web municipal</a></li>
+            </ul>
+          </div><!-- .col -->
+          <div class="col">
+            LOGO 1 LOGO 2
+          </div><!-- .col -->
+        </div><!-- .wrapper -->
+      </div><!-- .main-footer -->
+      <div class="main-footer-project">
+        <div class="wrapper">
+          <strong>Alchups</strong> es un proyecto <a href="https://github.com/bierasolutions/alchups">open source</a>. A tu disposicion en <a href="https://github.com/bierasolutions/alchups">GitHub</a>.
+        </div><!-- .wrapper -->
+      </div><!-- .main-footer-project -->
+    </footer>
+  </div><!-- .site -->
 </body>
 </html>
