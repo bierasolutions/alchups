@@ -8,7 +8,8 @@ gem "paperclip", "~> 4.3"
 gem 'aws-sdk', '< 2.0'
 gem 'devise'
 gem 'rqrcode'
-# Use SCSS for stylesheets
+
+gem 'bourbon'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -26,14 +27,22 @@ gem 'unicorn-rails'
 
 gem 'coordinate-converter'
 
-group :development, :test do
+group :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+  gem 'sqlite3'
+end
+
+group :development do
   gem 'faker', '~> 1.4.3'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
-  gem 'spring'
   gem 'sqlite3'
-  gem 'rspec-rails', '~> 3.0'
-  gem 'factory_girl_rails'
+  gem 'spring'
+  gem 'capistrano', '~> 3.4.0', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-rbenv', require: false
+  gem 'capistrano-unicorn-nginx', require: false
 end
 
 group :production do
