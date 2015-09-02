@@ -6,10 +6,6 @@
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700,300' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag 'public', media: 'all'%>
   <%= csrf_meta_tags %>
-  <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?v=3.exp">
-  </script>
-  <%= javascript_include_tag "application" %>
 </head>
 <body>
   <div class="site">
@@ -38,7 +34,7 @@
       <div class="main-footer">
         <div class="wrapper">
           <div class="col">
-            LOGO
+            <%=image_tag "logo-white.png", :alt=>"Logotipo de Alchups" %>
           </div><!-- .col -->
           <div class="col">
             <ul>
@@ -50,17 +46,22 @@
               <li><%= link_to "Web municipal", "http://www.sanestebandelitera.es/" %></li>
             </ul>
           </div><!-- .col -->
-          <div class="col">
-            LOGO 1 LOGO 2
+          <div class="col logos">
+            <a href="http://www.dphuesca.es/"><%=image_tag "logo-dph.png", :alt=>"Logotipo de la Diputación Provincial de Huesca" %></a>
+            <a href="http://www.sanestebandelitera.es/"><%=image_tag "logo-sel.png", :alt=>"Logotipo de San Esteban de la Litera" %></a>
           </div><!-- .col -->
         </div><!-- .wrapper -->
       </div><!-- .main-footer -->
       <div class="main-footer-project">
         <div class="wrapper">
-          <strong>Alchups</strong> es un proyecto <a href="https://github.com/bierasolutions/alchups">open source</a>. A tu disposicion en <a href="https://github.com/bierasolutions/alchups">GitHub</a>.
+          <strong>Alchups</strong> es un proyecto <a href="https://github.com/bierasolutions/alchups">open source</a><br /> <%=image_tag "logo-github.png", :alt=>"GitHub Logo" %> <br /> A tu disposicion en <a href="https://github.com/bierasolutions/alchups">GitHub</a>.
         </div><!-- .wrapper -->
       </div><!-- .main-footer-project -->
     </footer>
   </div><!-- .site -->
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?v=3.exp">
+  </script>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>
