@@ -102,6 +102,7 @@ $(document).ready(function() {
 	    var mapOptions = {
 	      center: posicion,
 	      zoom: ZOOM,
+        scrollwheel: false,
 	      mapTypeId: google.maps.MapTypeId.SATELLITE
 	    };
 
