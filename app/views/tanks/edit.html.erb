@@ -1,6 +1,6 @@
 <h1>Editar Aljibe</h1>
-
 <div class="row">
+<%= link_to "Subir foto", new_tank_photo_path(@tank) %>
   <div class="well bs-component">
     <%= form_for @tank, :html => {:class => "form-horizontal"} do |f| %>
       <fieldset>
