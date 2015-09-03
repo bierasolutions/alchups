@@ -116,7 +116,8 @@ $(document).ready(function() {
 	function makeMarker(lati,longi,mapa){
 		var marker = new google.maps.Marker({
 	    	position: new google.maps.LatLng(lati, longi),
-	        map: mapa
+        map: mapa,
+        icon: '/icono-mapa.png'
 	    });
 
 	    return marker;
