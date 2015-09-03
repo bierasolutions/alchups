@@ -37,8 +37,8 @@ $(document).ready(function() {
     var polyline = new google.maps.Polyline({
       path: path,
       geodesic: true,
-      strokeColor: '#FFF',
-      strokeOpacity: 0.7,
+      strokeColor: '#B2E382',
+      strokeOpacity: 0.8,
       strokeWeight: 5
     });
     polyline.setMap(map); 
@@ -48,8 +48,8 @@ $(document).ready(function() {
     var polyline = new google.maps.Polyline({
       path: path,
       geodesic: true,
-      strokeColor: '#FF0000',
-      strokeOpacity: 0.7,
+      strokeColor: '#D4A9EF',
+      strokeOpacity: 0.8,
       strokeWeight: 5
     });
     polyline.setMap(map); 
