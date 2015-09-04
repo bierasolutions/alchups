@@ -23,7 +23,7 @@ RSpec.describe "Kml path extraction" do
     let(:content) { File.read('spec/utils/for_testing.kml') }
     it "should detect the groups of coordinates inside <MultiGeometry>" do
       path_extractor = KmlPathExtractor.new content
-      expect(path_extractor.coordinates_groups.size).to eq 7
+      expect(path_extractor.coordinates_groups.size).to eq 9
     end
 
     it "should detect the coordinates inside <MultiGeometry> tag" do
