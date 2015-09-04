@@ -42,7 +42,7 @@ class KmlPathExtractor
   private
     def parse_coordinates input
       xml = Nokogiri::XML(input)
-      xml.css("MultiGeometry coordinates").each do |group|
+      xml.css("Placemark coordinates").each do |group|
         coordinates = KmlPathExtractor.coordinates_from(group.content)
         @coordinates_groups << coordinates
         @coordinates += coordinates

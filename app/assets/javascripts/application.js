@@ -15,7 +15,6 @@ $(document).ready(function() {
 });
 	
 	function homeMap(){
-
 		var options = mapOptions(41.8965939,0.3269502,14);
 		var map = makeMap(options);
 		var infowindow = new google.maps.InfoWindow();
@@ -31,6 +30,7 @@ $(document).ready(function() {
  			});
  		});
     createRoutes(map);
+    createTerm(map);
 	}
 
   function createRoute1Path(path, map){
@@ -51,6 +51,15 @@ $(document).ready(function() {
       strokeColor: '#D4A9EF',
       strokeOpacity: 0.8,
       strokeWeight: 5
+    });
+    polyline.setMap(map); 
+  }
+
+  function createTermPath(path, map){
+    var polyline = new google.maps.Polyline({
+      path: path,
+      strokeColor: '#FFF',
+      strokeWeight: 2
     });
     polyline.setMap(map); 
   }
@@ -79,7 +88,8 @@ $(document).ready(function() {
        		  infowindow.open(map,marker);
    			});
     	
- 		 });	    
+ 		 });
+    createTerm(map);
 	}
 
 	function initializeShow() {
@@ -94,6 +104,7 @@ $(document).ready(function() {
 	    var map = makeMap(options);
 
 	    makeMarker(lat,longi,map);
+      createTerm(map);
 	}
 
 	function mapOptions(lati,longi,ZOOM){
