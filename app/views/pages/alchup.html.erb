@@ -7,7 +7,7 @@
 <% unless @tank.photos.empty? %>
   Fotos:
 <% @tank.photos.each do |photo|%>
-<%= image_tag photo.image.url(:medium), size: "80x80" %>
+<%= image_tag photo.image.url(:medium) %>
   <%end%>
 <%end%>
 

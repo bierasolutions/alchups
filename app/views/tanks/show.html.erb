@@ -10,10 +10,6 @@
 <% end %>
 <h3>Descripción</h3>
 <p id='description' data-latitude="<%= @tank.coordinates[:lat] %>" data-longitude="<%= @tank.coordinates[:long] %>"><%= @tank.description %></p>
-<% if @tank.notes and not @tank.notes.empty? %>
-<h4>Notas</h4>
-<p><%=@tank.notes%></p>
-<% end %>
 <% unless @tank.photos.empty? %>
 <ul class="list-inline">
 <% @tank.photos.each do |photo|%>
