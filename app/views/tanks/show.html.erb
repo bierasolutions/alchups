@@ -18,7 +18,7 @@
 <ul class="list-inline">
 <% @tank.photos.each do |photo|%>
 <li>
-  <%= image_tag photo.image.url(:medium), size: "80x80" %>
+  <%= image_tag photo.image.url(:medium) %>
   <br>
   <%= link_to "Borrar foto", tank_photo_path(@tank,photo), method: :delete, data: {confirm: "¿Estas seguro?"} %>
 </li>
