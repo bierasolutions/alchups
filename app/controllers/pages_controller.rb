@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   layout "public"
   def index
-    @tanks = Tank.all
+    @tanks = Tank.all.order(:title)
     @routes = Route.all
   end
 
