@@ -645,9 +645,20 @@ a.btn.primary, button.btn.primary, input.btn.primary{
 
 @media only screen  and (max-width : 820px) {
   .aljibes .aljibes-list{ @include columns(3 8em); }
+  .single-image .image-selector{ width: 80%; }
+  .single-content .belong-route{ right: auto; left: 50%; @include transform(translateX(-50%)); }
+  .single-content .content{ width: 90%; }
 }
 
 @media only screen  and (max-width : 760px) {
+  .close-alchups .close-alchups-items{
+    @include flex-direction(column);
+    a{
+      margin-bottom: 1em;
+      width: 100%; 
+      &:last-child{ margin-bottom: 0px; }
+    }
+  }
   .routes{
     @include flex-direction(column);
     .route{
