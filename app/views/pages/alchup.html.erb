@@ -11,13 +11,11 @@
 <div class="wrapper">
       <% unless @tank.photos.empty? %>
         <div class="single-image">
-          <%= image_tag @tank.main_photo(:large), id: 'header_img', :alt => @tank.title %>
+          <%= image_tag @tank.main_photo(:medium), id: 'header_img', :alt => @tank.title %>
           <div class="image-selector">
-            <a href="#" class="nav prev"><i class="icon-arrow-left4"></i></a>
             <% @tank.photos.each do |photo|%>
-            <a href="<%=photo.image.url(:large)%>" class="item"><%= image_tag photo.image.url(:thumb) %></a>
+            <a href="<%=photo.image.url(:medium)%>" class="item"><%= image_tag photo.image.url(:thumb) %></a>
             <%end%>
-            <a href="#" class="nav prev"><i class="icon-arrow-right"></i></a>
           </div>
         </div><!-- .single-image -->
 
