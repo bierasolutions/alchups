@@ -29,7 +29,7 @@
     <h2>Además de las rutas, puedes conocer cada uno de los <%= @tanks.size %> aljibes localizados</h2>
     <ol class="aljibes-list" id="alchups">
       <% @tanks.each do |tank| %>
-        <li data-latitude="<%= tank.latitude %>" data-longitude="<%= tank.longitude %>">
+        <li data-latitude="<%= tank.latitude %>" data-longitude="<%= tank.longitude %>" data-img="<%= tank.main_photo%>">
           <%=link_to tank.title, alchup_path(tank) %>
         </li>
       <% end %>

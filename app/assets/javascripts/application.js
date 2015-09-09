@@ -23,9 +23,13 @@ $(document).ready(function() {
     	var lati = $(this).data("latitude");
     	var longi = $(this).data("longitude");
     	var contentInfo = $(this).html();
+      var img_src = $(this).data("img");
   		var marker = makeMarker(lati,longi,map);
+      if(img_src){
+        contentInfo += '<br/><img src="'+img_src + '"/>';
+      }
     	google.maps.event.addListener(marker, 'click', function() {
-    			infowindow.setContent(contentInfo)
+    			infowindow.setContent('<div style="text-align:center; width: 100%; padding-left:20px;">'+contentInfo+'</div>')
      		  infowindow.open(map,marker);
  			});
  		});

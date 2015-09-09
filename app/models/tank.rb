@@ -14,4 +14,10 @@ class Tank < ActiveRecord::Base
   def longitude
     coordinates[:long]
   end
+
+  def main_photo
+    if(photos.size > 0)
+      photos.first.image.url(:thumb)
+    end
+  end
 end
