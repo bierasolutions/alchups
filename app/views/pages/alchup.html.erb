@@ -4,12 +4,14 @@
 <%=@tank.description%>
 </p>
 
+<%= image_tag @tank.main_photo(:large), id: 'header_img' %><br/>
 <% unless @tank.photos.empty? %>
-  Fotos:
+  <div class="image-selector">
 <% @tank.photos.each do |photo|%>
-<%= image_tag photo.image.url(:medium) %>
+<a href="<%=photo.image.url(:large)%>" class="item"><%= image_tag photo.image.url(:medium) %></a>
   <%end%>
 <%end%>
+</div>
 
 <div id="map-canvas" style="height: 300px; weight:100%">
 </div>  

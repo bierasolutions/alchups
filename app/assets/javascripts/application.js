@@ -12,6 +12,12 @@ $(document).ready(function() {
 	}else{
 		initializeShow();	
 	}
+  $('.image-selector a').each(function(){
+    $(this).on('click', function(){
+      $('#header_img').attr('src', $(this).attr('href'));
+      return false;
+    });
+  });
 });
 	
 	function homeMap(){
