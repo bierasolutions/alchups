@@ -31,9 +31,9 @@ $font_semibold: 600;
 $font_bold: 700;
 
 .wrapper{
-	width: 1355px;
-	max-width: 94%;
-	margin: 0 auto;
+  width: 1355px;
+  max-width: 94%;
+  margin: 0 auto;
 }
 
 /*************************************/
@@ -47,7 +47,7 @@ $font_bold: 700;
   box-sizing: border-box; 
 }
 input, textarea, button{
-	font-family: $font_merriweather;
+  font-family: $font_merriweather;
 }
 .clear{
   clear: both;
@@ -56,7 +56,7 @@ input, textarea, button{
 }
 
 html{
-	font-size: 16px;
+  font-size: 16px;
   height: 100%; 
   -webkit-text-size-adjust: 100%; 
   -ms-text-size-adjust: 100%;
@@ -85,14 +85,14 @@ body{
 /***************************************************/
 
 img{
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 a{
-	display: inline-block;
-	text-decoration: none;
-	-webkit-transition: all 0.1s ease-in-out;  
+  display: inline-block;
+  text-decoration: none;
+  -webkit-transition: all 0.1s ease-in-out;  
   transition: all 0.1s ease-in-out; 
   &:hover{
   }
@@ -133,7 +133,7 @@ a.btn.primary, button.btn.primary, input.btn.primary{
 
 .main-header{
   padding-top: 15px;
-  background: $background_main url(../img/texture-header.jpg) center top;
+  background: $background_main url(texture-header.jpg) center top;
   .main-menu{
     text-align: right;
     margin-bottom: 4em;
@@ -539,7 +539,7 @@ a.btn.primary, button.btn.primary, input.btn.primary{
 
 .main-footer{
   padding: 50px 0px;
-  background: $orange url(../img/texture-main-footer.jpg) center top;
+  background: $orange url(texture-main-footer.jpg) center top;
   color: #fff;
   .wrapper{
     @include display(flex);
@@ -598,7 +598,7 @@ a.btn.primary, button.btn.primary, input.btn.primary{
 .main-footer-project{
   position: relative;
   padding: 50px 0px;
-  background: $blue url(../img/texture-main-footer-project.jpg) center top;
+  background: $blue url(texture-main-footer-project.jpg) center top;
   text-align: center;
   color: #fff;
   font-family: $font_merriweather;
