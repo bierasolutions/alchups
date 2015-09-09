@@ -679,8 +679,40 @@ a.btn.primary, button.btn.primary, input.btn.primary {
   .aljibes .aljibes-list {
     -webkit-columns: 3 8em;
     -moz-columns: 3 8em;
-    columns: 3 8em; } }
+    columns: 3 8em; }
+
+  .single-image .image-selector {
+    width: 80%; }
+
+  .single-content .belong-route {
+    right: auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%); }
+
+  .single-content .content {
+    width: 90%; } }
 @media only screen and (max-width: 760px) {
+  .close-alchups .close-alchups-items {
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column; }
+    .close-alchups .close-alchups-items a {
+      margin-bottom: 1em;
+      width: 100%; }
+      .close-alchups .close-alchups-items a:last-child {
+        margin-bottom: 0px; }
+
   .routes {
     -webkit-box-orient: vertical;
     -moz-box-orient: vertical;
