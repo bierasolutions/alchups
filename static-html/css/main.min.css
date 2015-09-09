@@ -177,7 +177,8 @@ a.btn.primary, button.btn.primary, input.btn.primary {
   margin-bottom: 5em; }
 
 .single-image {
-  position: relative; }
+  position: relative;
+  min-height: 250px; }
   .single-image img {
     max-width: 100%;
     height: auto; }
