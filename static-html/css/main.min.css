@@ -271,6 +271,9 @@ a.btn.primary, button.btn.primary, input.btn.primary {
       margin-bottom: 3em;
       text-align: center;
       width: 250px; }
+      .single-content .belong-route span.label a {
+        color: #fff;
+        text-decoration: none; }
       .single-content .belong-route span.label strong {
         font-family: Arial, sans-serif; }
       .single-content .belong-route span.label:before {
