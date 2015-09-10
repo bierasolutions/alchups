@@ -13,3 +13,8 @@ Ruta <%=@route.title%>
 <p>
   Integer molestie, mauris nec porta viverra, metus purus vehicula quam, et convallis ante est vel quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc placerat ligula at quam molestie, in iaculis orci eleifend. Morbi sit amet hendrerit odio. Suspendisse interdum diam in ligula aliquet scelerisque. Nulla suscipit eget ligula at ullamcorper. Cras lacinia eu nunc at posuere. Integer posuere auctor nulla vitae.
 </p>
+
+rutas:<br/>
+<%@route.tanks.each do |tank|%>
+<%=link_to tank.title, alchup_path(tank)%><br/>
+<%end%>
