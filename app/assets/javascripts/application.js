@@ -26,13 +26,16 @@ $(document).ready(function() {
 		var infowindow = new google.maps.InfoWindow();
 
 		$('#alchups li').each(function() {
+      var contentInfo = $(this).html();
     	var lati = $(this).data("latitude");
     	var longi = $(this).data("longitude");
-    	var contentInfo = $(this).html();
       var img_src = $(this).data("img");
   		var marker = makeMarker(lati,longi,map);
       if(img_src){
-        contentInfo += '<br/><img src="'+img_src + '"/>';
+        var anchor = $(this).find('a');
+        var href = anchor.attr('href');
+        var name = anchor.html();
+          contentInfo = '<a href="'+href+'">'+name+'<br/><img src="'+img_src + '"/></a>';
       }
     	google.maps.event.addListener(marker, 'click', function() {
     			infowindow.setContent('<div style="text-align:center; width: 100%; padding-left:20px;">'+contentInfo+'</div>')
