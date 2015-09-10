@@ -96,14 +96,14 @@ RSpec.describe TanksController, :type => :controller do
 
     describe "with valid params" do
       before(:each) do
-        put :update, :id => @tank.id,:tank => {:title => 'Nuevo Alchup', :description => 'Nueva descripcion', :latitude => 0, :longitude => 0, :notes => 'Nueva nota'}
+        put :update, :id => @tank.id,:tank => {:title => 'Nuevo Alchup', :description => 'Nueva descripcion', :y => 0, :x => 0, :notes => 'Nueva nota'}
       end
       it "changes tank attributes" do
         @tank.reload
         expect(@tank.title).to eq("Nuevo Alchup")
         expect(@tank.description).to eq("Nueva descripcion")
-        expect(@tank.latitude).to eq(0)
-        expect(@tank.longitude).to eq(0)
+        expect(@tank.y).to eq(0)
+        expect(@tank.x).to eq(0)
         expect(@tank.notes).to eq("Nueva nota")
       end
 

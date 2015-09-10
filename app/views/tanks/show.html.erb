@@ -1,46 +1,20 @@
-  
-
-  <script type="text/javascript">
-
-	  function initialize() {
-
-	  	var place = document.getElementById('descripcion');
-
-	    var lat = place.dataset.latitude;
-	    var longi = place.dataset.longitude;
-
-	    var posicion = new google.maps.LatLng(lat, longi)
-
-	    var mapOptions = {
-	      center: posicion,
-	      zoom: 15,
-	      mapTypeId: google.maps.MapTypeId.SATELLITE
-	    };
-
-	    var map = new google.maps.Map(document.getElementById('map-canvas'),
-	        mapOptions);
-
-	    var marker = new google.maps.Marker({
-	    position: posicion,
-	    map: map
-	    });
-	  }
-	  google.maps.event.addDomListener(window, 'load', initialize);
-  </script>  
-
+<div id="tankShow">
 <h2><%= @tank.title %></h2>
 <p>
 <%= link_to "Subir foto", new_tank_photo_path(@tank) %> |
 <%= link_to "Editar", edit_tank_path(@tank) %> |
 <%= link_to "Borrar", @tank, method: :delete, data: {confirm: "¿Estas seguro?"} %>
 </p>
-<p id='descripcion' data-latitude="<%= @tank.latitude %>" data-longitude="<%= @tank.longitude %>"><%= @tank.description %></p>
-
+<% if @tank.route %>
+<h4>Ruta: <%= @tank.route%></h4> 
+<% end %>
+<h3>Descripción</h3>
+<p id='description' data-latitude="<%= @tank.coordinates[:lat] %>" data-longitude="<%= @tank.coordinates[:long] %>"><%= @tank.description %></p>
 <% unless @tank.photos.empty? %>
 <ul class="list-inline">
 <% @tank.photos.each do |photo|%>
 <li>
-  <%= image_tag photo.image.url(:medium), size: "80x80" %>
+  <%= image_tag photo.image.url(:medium) %>
   <br>
   <%= link_to "Borrar foto", tank_photo_path(@tank,photo), method: :delete, data: {confirm: "¿Estas seguro?"} %>
 </li>
@@ -49,4 +23,4 @@
 <%end%>
 
 <div id="map-canvas" style="width: 100%; height: 400px; margin: 0; padding: 0;"></div>
-
+</div>

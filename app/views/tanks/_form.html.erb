@@ -1,30 +1,30 @@
 <div class="form-group">
-  <%= f.label :title, :class => "col-lg-2 control-label" %>
+  <%= f.label :title, "Nombre", :class => "col-lg-2 control-label" %>
   <div class="col-lg-10">
   <%= f.text_field :title, :class => "form-control" %>
   </div>
 </div>
 <div class="form-group">
-  <%= f.label :description, :class => "col-lg-2 control-label" %>
+  <%= f.label :description, "Descripción", :class => "col-lg-2 control-label" %>
   <div class="col-lg-10">
   <%= f.text_area :description, :class => "form-control" %>
   </div>
 </div>
 <div class="form-group">
-  <%= f.label :latitude, :class => "col-lg-2 control-label" %>
+  <%= f.label :x, "Coordenada X",  :class => "col-lg-2 control-label" %>
   <div class="col-lg-10">
-  <%= f.text_field :latitude, :class => "form-control" %>
+  <%= f.text_field :x, :class => "form-control" %>
   </div>
 </div>
 <div class="form-group">
-  <%= f.label :longitude, :class => "col-lg-2 control-label" %>
+  <%= f.label :y, "Coordenada Y", :class => "col-lg-2 control-label" %>
   <div class="col-lg-10">
-  <%= f.text_field :longitude, :class => "form-control" %>
+  <%= f.text_field :y, :class => "form-control" %>
   </div>
 </div>
 <div class="form-group">
-  <%= f.label :notes, :class => "col-lg-2 control-label" %>
+  <%= f.label :route_id, "Ruta", :class => "col-lg-2 control-label" %>
   <div class="col-lg-10">
-  <%= f.text_area :notes, :class => "form-control" %>
+  <%= f.select :route_id, routes_options, {:include_blank => 'Elige una ruta'} %>
   </div>
 </div>

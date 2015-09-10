@@ -1,17 +1,47 @@
-
-<ul>
-<% @tanks.each do |tank| %>
-  <li data-latitude="<%= tank.latitude %>" data-longitude="<%= tank.longitude %>">
-    Nombre: <%= tank.title %>
-    <br/>
-    Descripción: <%= tank.description %>
-    <br/>
-    <% unless tank.photos.empty? %>
-    Fotos:
-    <% tank.photos.each do |photo|%>
-    <%= image_tag photo.image.url(:medium), size: "80x80" %>
-    <%end%>
-    <%end%>
-  </li>
+<% content_for :title do %>
+Bienvenido
 <% end %>
-</ul>
+<% content_for :header do %>
+  <h1><%= link_to image_tag("logo.svg", :width=>"295", :height=>"32"), root_path%></h1><br />
+  <p>Descubre los Aljibes de San Esteban de la Litera</p>
+<% end %>
+
+
+<div class="main-map" id="home">
+      <div id="map-canvas" style="height: 620px;"></div>
+</div><!-- main-map -->
+<div class="main-description">
+  <div class="wrapper">
+    <em><strong>Alchup</strong></em> es la transcripción fonética empleada en la Litera del vocablo <em><strong>aljub</strong></em> utilizado ya en los documentos redactados en castellano en San Esteban de Litera en el 1579. Esta palabra sigue viva en el catalán actual y designa un depósito excavado en la roca o hecho con piedra y cubierto con bóveda para recoger y almacenar el agua de lluvia, aunque en la comarca de La Litera son depósitos sin esta cubierta. Tiene su equivalente al aljibe castellano, o cisterna, que es el depósito subterráneo donde se recoge y conserva el agua.
+  </div><!-- .wrapper -->
+</div><!-- main-description -->
+
+<div class="wrapper">
+  <div class="routes">
+    <div class="route">
+      <span class="label">Ruta <strong>1</strong></span>
+      <h2>De los lavaderos a las Forcas</h2>
+      <p><%=image_tag "home-ruta1.png", :alt=>"Fotografías de la Ruta 1"%></p>
+      <a href="<%=route_path(1)%>" class="btn primary">Quiero conocer esta ruta <span class="arrow">›</span></a>
+    </div><!-- .route -->
+    <div class="route">
+      <span class="label">Ruta <strong>2</strong></span>
+      <h2>De Perera a la Heredad</h2>
+      <p><%=image_tag "home-ruta2.png", :alt=>"Fotografías de la Ruta 2"%></p>
+      <a href="<%=route_path(2)%>" class="btn primary">Quiero conocer esta ruta <span class="arrow">›</span></a>
+    </div><!-- .route -->
+  </div>  
+</div><!-- .wrapper -->
+
+<div class="wrapper">
+  <div class="aljibes">
+    <h2>Además de las rutas, puedes conocer cada uno de los <%= @tanks.size %> aljibes localizados</h2>
+    <ol class="aljibes-list" id="alchups">
+      <% @tanks.each do |tank| %>
+        <li data-latitude="<%= tank.latitude %>" data-longitude="<%= tank.longitude %>" data-img="<%= tank.main_photo%>">
+          <%=link_to tank.title, alchup_path(tank) %>
+        </li>
+      <% end %>
+    </ol><!-- .aljibes-list -->
+  </div>
+</div><!-- .wrapper -->
