@@ -7,6 +7,7 @@ class PagesController < ApplicationController
 
   def alchup
     @tank = Tank.find(params[:id])
+    @other = Tank.limit(3).order("RANDOM()")
   end
 
   def route

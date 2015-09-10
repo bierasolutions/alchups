@@ -1,3 +1,6 @@
+<% content_for :title do %>
+<%=@tank.title%>
+<% end %>
 <% content_for :header do %>
   <div class="wrapper">
           <h2><%= link_to image_tag("logo.svg", :width=>"295", :height=>"32"), root_path%></h2><br />
@@ -24,9 +27,9 @@
         <div class="single-content">
           <%if @tank.route%>
             <% if @tank.route.id == 1%>
-            <div class="belong-route"><span class="label green"><%=link_to raw('Pertenece a<br />ruta <strong>1</strong>') ,route_path(@tank.route)%></span></div>
+            <div class="belong-route"><span class="label green"><%=link_to raw('Pertenece a<br />ruta <strong>1</strong> &gt;') ,route_path(@tank.route)%></span></div>
             <% elsif @tank.route.id == 2%>
-            <div class="belong-route"><span class="label purple">Pertenece a<br />ruta <strong>2</strong></span></div>
+            <div class="belong-route"><span class="label purple"><%=link_to raw('Pertenece a<br />ruta <strong>2</strong> &gt;') ,route_path(@tank.route)%></span></span></div>
             <%end%>
           <%end%>
           <div class="content" id="description" data-latitude="<%= @tank.latitude %>" data-longitude="<%= @tank.longitude %>">
@@ -37,23 +40,17 @@
         </div><!-- .single-content -->
 
 
-        <!--div class="close-alchups">
+        <div class="close-alchups">
           <h2>Otros aljibes</h2>
           <div class="close-alchups-items">
-            <a href="#" class="item">
-              <h4>Nombre del Aljibe <i class="icon-arrow-right3"></i></h4>
-              <img src="img/image-close-alchup.png" alt="">
+            <%@other.each do |tank|%>
+            <a href="<%=alchup_path(tank)%>" class="item">
+              <h4><%=tank.title%><i class="icon-arrow-right3"></i></h4>
+              <img src="<%=tank.main_photo(:medium)%>" alt="<%=tank.title%>">
             </a>
-            <a href="#" class="item">
-              <h4>Nombre del Aljibe <i class="icon-arrow-right3"></i></h4>
-              <img src="img/image-close-alchup.png" alt="">
-            </a>
-            <a href="#" class="item">
-              <h4>Nombre del Aljibe <i class="icon-arrow-right3"></i></h4>
-              <img src="img/image-close-alchup.png" alt="">
-            </a>
+            <%end%>
           </div>
-        </div>< .close-alchups -->
+        </div><!-- .close-alchups-->
 
         <div class="routes">
           <div class="route">
