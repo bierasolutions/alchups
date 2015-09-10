@@ -13,10 +13,12 @@ $(document).ready(function() {
 		initializeShow();	
 	}
   $('.image-selector a').each(function(){
+    var href = $(this).attr('href');
     $(this).on('click', function(){
-      $('#header_img').attr('src', $(this).attr('href'));
+      $('#header_img').attr('src', href);
       return false;
     });
+    $('<img/>')[0].src = href;
   });
 });
 	
