@@ -7,14 +7,27 @@ Ruta <%=@route.title%>
     <p>Descubre los Aljibes de San Esteban de la Litera</p>
   </div><!-- .wrapper -->
   <div class="single-title">
-    <h1><%=@route.title%></h1>
+    <h1 id="route" data-id="<%=@route.id%>"><%=@route.title%></h1>
   </div>
 <% end %>
-<p>
-  Integer molestie, mauris nec porta viverra, metus purus vehicula quam, et convallis ante est vel quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc placerat ligula at quam molestie, in iaculis orci eleifend. Morbi sit amet hendrerit odio. Suspendisse interdum diam in ligula aliquet scelerisque. Nulla suscipit eget ligula at ullamcorper. Cras lacinia eu nunc at posuere. Integer posuere auctor nulla vitae.
-</p>
+<div class="wrapper">
+<div class="single-content">
+          
+          <div class="content">
+            Integer molestie, mauris nec porta viverra, metus purus vehicula quam, et convallis ante est vel quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc placerat ligula at quam molestie, in iaculis orci eleifend. Morbi sit amet hendrerit odio. Suspendisse interdum diam in ligula aliquet scelerisque. Nulla suscipit eget ligula at ullamcorper. Cras lacinia eu nunc at posuere. Integer posuere auctor nulla vitae.
+          </div>
+          <div id="map-canvas" style="height: 350px; weight:100%">
+          </div>
+        </div><!-- .single-content -->
 
-rutas:<br/>
-<%@route.tanks.each do |tank|%>
-<%=link_to tank.title, alchup_path(tank)%><br/>
-<%end%>
+  <div class="aljibes">
+    <h2>Esta ruta tiene <%= @route.tanks.size %> aljibes localizados</h2>
+    <ol class="aljibes-list" id="alchups">
+      <% @route.tanks.each do |tank| %>
+        <li data-latitude="<%= tank.latitude %>" data-longitude="<%= tank.longitude %>" data-img="<%= tank.main_photo%>">
+          <%=link_to tank.title, alchup_path(tank) %>
+        </li>
+      <% end %>
+    </ol><!-- .aljibes-list -->
+  </div>
+</div><!-- .wrapper -->

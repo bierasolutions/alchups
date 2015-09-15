@@ -9,7 +9,9 @@ $(document).ready(function() {
 		homeMap();
 	}else if($('#tanksIndex').length){
 		initializeIndex();	
-	}else{
+	}else if($('#route').length){
+    routeMap();
+  }else{
 		initializeShow();	
 	}
   $('.image-selector a').each(function(){
@@ -25,28 +27,44 @@ $(document).ready(function() {
 	function homeMap(){
 		var options = mapOptions(41.8965939,0.3269502,14);
 		var map = makeMap(options);
-		var infowindow = new google.maps.InfoWindow();
+		createAlchupsMarkers(map);
+    createRoutes(map);
+    createTerm(map);
+	}
 
-		$('#alchups li').each(function() {
+  function routeMap(){
+    var map;
+    if($('#route').data("id") == 1){
+      map = makeMap(mapOptions(41.8965939,0.3270502,15));
+      createRoute1(map);
+    }else{
+      map = makeMap(mapOptions(41.8905939,0.3319502,15));
+      createRoute2(map);
+    }
+    createAlchupsMarkers(map);
+    createTerm(map);
+  }
+
+  function createAlchupsMarkers(map){
+    var infowindow = new google.maps.InfoWindow();
+    $('#alchups li').each(function() {
       var contentInfo = $(this).html();
-    	var lati = $(this).data("latitude");
-    	var longi = $(this).data("longitude");
+      var lati = $(this).data("latitude");
+      var longi = $(this).data("longitude");
       var img_src = $(this).data("img");
-  		var marker = makeMarker(lati,longi,map);
+      var marker = makeMarker(lati,longi,map);
       if(img_src){
         var anchor = $(this).find('a');
         var href = anchor.attr('href');
         var name = anchor.html();
           contentInfo = '<a href="'+href+'">'+name+'<br/><img src="'+img_src + '"/></a>';
       }
-    	google.maps.event.addListener(marker, 'click', function() {
-    			infowindow.setContent('<div style="text-align:center; width: 100%; padding-left:20px;">'+contentInfo+'</div>')
-     		  infowindow.open(map,marker);
- 			});
- 		});
-    createRoutes(map);
-    createTerm(map);
-	}
+      google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent('<div style="text-align:center; width: 100%; padding-left:20px;">'+contentInfo+'</div>')
+          infowindow.open(map,marker);
+      });
+    });
+  }
 
   function createRoute1Path(path, map){
     var polyline = new google.maps.Polyline({
