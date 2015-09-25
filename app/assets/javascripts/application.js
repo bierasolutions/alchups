@@ -60,7 +60,7 @@ $(document).ready(function() {
           contentInfo = '<a href="'+href+'">'+name+'<br/><img src="'+img_src + '"/></a>';
       }
       google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent('<div style="text-align:center; width: 100%; padding-left:20px;">'+contentInfo+'</div>')
+          infowindow.setContent('<div class="tooltip">'+contentInfo+'</div>')
           infowindow.open(map,marker);
       });
     });
