@@ -39,17 +39,17 @@ Ruta <%=@route.title%>
             </ul>
 
             <h2>A tener en cuenta:</h2>
-            <p>
-            No olvides planificar tu ruta (horario, metereología, etc.) y llevar el equipamiento necesario (calzado y ropa adecuada, agua, etc.).<br/>
-            Respeta la fauna y flora, no arranques las plantas ni asustes a los animales.<br/>
-            Disfruta del camino, intentando identificar flora y fauna, y de los paisajes repletos de contrastes que encontrarás.<br/>
-            No olvides tus prismáticos y tu cámara de fotos.<br/>
-            No tires basura. Queremos ver tu pisada no tu huella.<br/>
-            No hagas fuego. Respeta los caminos y senderos.<br/>
-            Cruza las tierras de cultivo por los senderos y nunca por la zona sembrada.<br/>
-            Sigue y respeta las señales. En época de caza respeta las acotaciones.<br/>
-            Comunica rápidamente cualquier incidencia al teléfono de emergencia <b>112</b>.
-            </p>
+            <ul>
+            <li>No olvides planificar tu ruta (horario, metereología, etc.) y llevar el equipamiento necesario (calzado y ropa adecuada, agua, etc.).</li>
+            <li>Respeta la fauna y flora, no arranques las plantas ni asustes a los animales.</li>
+            <li>Disfruta del camino, intentando identificar flora y fauna, y de los paisajes repletos de contrastes que encontrarás.</li>
+            <li>No olvides tus prismáticos y tu cámara de fotos.</li>
+            <li>No tires basura. Queremos ver tu pisada no tu huella.</li>
+            <li>No hagas fuego. Respeta los caminos y senderos.</li>
+            <li>Cruza las tierras de cultivo por los senderos y nunca por la zona sembrada.</li>
+            <li>Sigue y respeta las señales. En época de caza respeta las acotaciones.</li>
+            <li>Comunica rápidamente cualquier incidencia al teléfono de emergencia <b>112</b></li>.
+            </ul>
             <% unless @route.tanks.empty?%> 
             <div class="single-image">
               <%= image_tag @route.tanks.first.main_photo(:large), id: 'header_img'%>
