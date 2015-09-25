@@ -19,4 +19,7 @@ class PagesController < ApplicationController
 
   def what
   end
+
+  def cookies
+  end
 end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'ruta/:id' => 'pages#route', as: :route
   get 'que-son' => 'pages#what', as: :what
   get 'el-pueblo' => 'pages#town', as: :town
+  get 'cookies' => 'pages#cookies', as: :cookies
   devise_for :admins
 
   devise_scope :admin do

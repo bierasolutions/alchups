@@ -23,8 +23,12 @@ $(document).ready(function() {
     $('<img/>')[0].src = href;
   });
   $.cookieBar({
-    message: 'Usamos cookies para poder tener estadísticas de uso de la web.',
+    message: 'Usamos cookies para poder tener estadísticas de uso de la web. Si continúas navegando estás dando tu consentimiento para la instalación de las cookies.',
     acceptText: 'Acepto',
+    autoEnable: false,
+    acceptOnContinue: false,
+    acceptOnScroll: true,
+    acceptAnyClick: true
   });
   if(jQuery.cookieBar('cookies')){
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

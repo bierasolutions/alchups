@@ -426,6 +426,26 @@ a.btn.primary, button.btn.primary, input.btn.primary{
       height: 500px;
       margin-bottom: 2.5em;
     }
+    table{
+      border: 1px solid $grey_superlight;
+      margin-bottom: 2.5em;
+      tr{
+       td, th{
+         padding: 10px;
+         line-height: 1.3em;
+         font-size: rem(14);
+         small{
+          font-size: rem(14);
+         }
+       }
+       th{
+         font-weight: $font_semibold;
+         font-family: $font_raleway;
+         text-transform: uppercase;
+         background-color: $grey_superlight;
+       }
+      }
+    }
     a{
       color: $orange;
       font-weight: $font_semibold;
