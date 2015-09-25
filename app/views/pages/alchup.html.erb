@@ -26,16 +26,13 @@
 
         <div class="single-content">
           <%if @tank.route%>
-            <% if @tank.route.id == 1%>
-            <div class="belong-route"><span class="label green"><%=link_to raw('Pertenece a<br />ruta <strong>1</strong> &gt;') ,route_path(@tank.route)%></span></div>
-            <% elsif @tank.route.id == 2%>
-            <div class="belong-route"><span class="label purple"><%=link_to raw('Pertenece a<br />ruta <strong>2</strong> &gt;') ,route_path(@tank.route)%></span></span></div>
-            <%end%>
+            <div class="belong-route"><span class="label ruta<%=@tank.route.id%>"><%=link_to raw('Pertenece a<br />ruta <strong>1</strong> &gt;') ,route_path(@tank.route)%></span></div>
           <%end%>
           <div class="content" id="description" data-latitude="<%= @tank.latitude %>" data-longitude="<%= @tank.longitude %>">
             <%=@tank.description%>
-          </div>
-          <div id="map-canvas" style="height: 300px; weight:100%">
+            <br/><br/>
+            <div id="map-canvas" class="map">
+            </div>
           </div>
         </div><!-- .single-content -->
 

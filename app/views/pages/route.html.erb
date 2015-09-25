@@ -6,14 +6,22 @@ Ruta <%=@route.title%>
     <h2><%= link_to image_tag("logo.svg", :width=>"295", :height=>"32"), root_path%></h2><br />
     <p>Descubre los Aljibes de San Esteban de la Litera</p>
   </div><!-- .wrapper -->
-  <div class="single-title">
+  <div class="single-title ruta ruta<%=@route.id%>">
+    <span class="label">Ruta <strong><%=@route.id%></strong></span>
     <h1 id="route" data-id="<%=@route.id%>"><%=@route.title%></h1>
   </div>
 <% end %>
+<div class="single-ruta-image">
+
+  <%= image_tag "ruta#{@route.id}.png", :alt=>"Imagen previa de la ruta 1" %>
+</div><!-- .single-ruta-image -->
 <div class="wrapper">
 <div class="single-content">
           
           <div class="content">
+            <div id="map-canvas" class="map">
+              
+            </div>
             <p>
             <%=@route.description%>
             </p>
@@ -42,10 +50,17 @@ Ruta <%=@route.title%>
             Sigue y respeta las señales. En época de caza respeta las acotaciones.<br/>
             Comunica rápidamente cualquier incidencia al teléfono de emergencia <b>112</b>.
             </p>
-
+            <% unless @route.tanks.empty?%> 
+            <div class="single-image">
+              <%= image_tag @route.tanks.first.main_photo(:large), id: 'header_img'%>
+              <div class="image-selector">
+                <% @route.tanks.first.photos.each do |photo|%>
+                <a href="<%=photo.image.url(:large)%>" class="item"><%= image_tag photo.image.url(:thumb) %></a>
+                <%end%>
+              </div>
+            </div><!-- .single-image -->
           </div>
-          <div id="map-canvas" style="height: 350px; weight:100%">
-          </div>
+          <%end%>
         </div><!-- .single-content -->
 
   <div class="aljibes">
