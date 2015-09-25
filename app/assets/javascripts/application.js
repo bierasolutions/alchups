@@ -141,12 +141,14 @@ $(document).ready(function() {
 	}
 
 	function mapOptions(lati,longi,ZOOM){
-		var posicion = new google.maps.LatLng(lati, longi)
+		var position = new google.maps.LatLng(lati, longi)
 
 	    var mapOptions = {
-	      center: posicion,
+	      center: position,
 	      zoom: ZOOM,
         scrollwheel: false,
+        streetViewControl: false,
+        mapTypeControl: false,
 	      mapTypeId: google.maps.MapTypeId.SATELLITE
 	    };
 
