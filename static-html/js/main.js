@@ -1,4 +1,14 @@
 $( document ).ready(function() {
+	
+	/**
+	CookieBar
+	**/
+	$.cookieBar({
+		message: 'Usamos cookies para poder tener estadísticas de uso de la web.',
+		acceptText: 'Acepto',
+
+	});
+	
 	/**
 	Restive
 	**/

@@ -285,6 +285,9 @@ a.btn.primary, button.btn.primary, input.btn.primary{
 .single-main{
   margin-bottom: 5em;
 }
+.single-ruta-image{
+  text-align: center;
+}
 .single-image{
   position: relative;
   min-height: 250px;
@@ -695,6 +698,21 @@ a.btn.primary, button.btn.primary, input.btn.primary{
   }
 }//.main-footer-project
 
+
+/****************************************************/
+/********************  COOKIES  *********************/
+/****************************************************/
+
+#cookie-bar { z-index: 9999; background:rgba(0,0,0,0.9); height:auto; padding: 12px 0px; line-height:24px; color:#eeeeee; text-align:center; position:fixed; bottom:0; left:0; width:100%; font-family: $font_merriweather; font-size: rem(15); }
+#cookie-bar.fixed.bottom {bottom:0; top:auto;}
+#cookie-bar p {display: block; margin:0 auto; padding:0; width: 1200px; max-width: 92%;}
+#cookie-bar a {color:#ffffff; text-transform: uppercase; display:inline-block; border-radius:2px; text-decoration:none; padding:2px 10px; margin-left: 20px; font-family: $font_raleway; font-weight: $font_bold;}
+#cookie-bar .cb-enable {background-color: $orange;}
+#cookie-bar .cb-enable:hover {background: $green; color: #000;}
+#cookie-bar .cb-disable {background:#990000;}
+#cookie-bar .cb-disable:hover {background:#bb0000;}
+#cookie-bar .cb-policy {background:#0033bb;}
+#cookie-bar .cb-policy:hover {background:#0055dd;}
 
 /****************************************************/
 /****************************************************/
