@@ -145,7 +145,8 @@ a.btn.primary, button.btn.primary, input.btn.primary {
   .site-description .single-title {
     background-color: #F58323;
     padding: 35px 0px;
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    position: relative; }
     .site-description .single-title h1 {
       text-align: center;
       color: #fff;
@@ -155,6 +156,51 @@ a.btn.primary, button.btn.primary, input.btn.primary {
       letter-spacing: 0.2em;
       text-transform: uppercase;
       line-height: 1.35em; }
+    .site-description .single-title.ruta {
+      background-color: #B2E382;
+      padding-top: 0px; }
+      .site-description .single-title.ruta h1 {
+        color: #000; }
+      .site-description .single-title.ruta span.label {
+        position: relative;
+        display: inline-block;
+        font-weight: 700;
+        font-family: "Raleway", sans-serif;
+        color: #B2E382;
+        padding: 20px 0px 0px 0px;
+        font-size: 0.9375rem;
+        text-transform: uppercase;
+        z-index: 2;
+        line-height: 0px;
+        margin-bottom: 3em;
+        text-align: center; }
+        .site-description .single-title.ruta span.label strong {
+          font-family: Arial, sans-serif; }
+        .site-description .single-title.ruta span.label:before {
+          position: absolute;
+          display: inline-block;
+          content: "";
+          top: 0px;
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+          -moz-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          -o-transform: translateX(-50%);
+          transform: translateX(-50%);
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 55px 75px 0 75px;
+          border-color: #ffffff transparent transparent transparent;
+          z-index: -1; }
+      .site-description .single-title.ruta.green {
+        background-color: #B2E382; }
+        .site-description .single-title.ruta.green span.label {
+          color: #B2E382; }
+      .site-description .single-title.ruta.purple {
+        background-color: #D4A9EF; }
+        .site-description .single-title.ruta.purple span.label {
+          color: #D4A9EF; }
 
 .main-map {
   margin-bottom: 5px;
@@ -187,7 +233,7 @@ a.btn.primary, button.btn.primary, input.btn.primary {
     bottom: 20px;
     left: 50%;
     height: 105px;
-    padding: 10px 5px;
+    padding: 5px 5px 10px 5px;
     line-height: 95px;
     background-color: rgba(0, 0, 0, 0.3);
     -webkit-transform: translateX(-50%);
@@ -242,14 +288,20 @@ a.btn.primary, button.btn.primary, input.btn.primary {
       background-color: transparent;
       color: #fff;
       text-decoration: none;
-      padding: 0px 2px;
+      padding: 5px 2px 0px 2px;
       font-size: 1.875rem; }
       .single-image .image-selector a.nav:hover {
-        color: #F58323; }
-    .single-image .image-selector a.item img {
-      border: 1px solid transparent; }
-    .single-image .image-selector a.item:hover img, .single-image .image-selector a.item.active img {
-      border-color: #F58323; }
+        color: #F58323;
+        text-decoration: none; }
+    .single-image .image-selector a.item {
+      position: relative;
+      vertical-align: middle; }
+      .single-image .image-selector a.item img {
+        border: 1px solid transparent;
+        position: relative;
+        vertical-align: middle; }
+      .single-image .image-selector a.item:hover img, .single-image .image-selector a.item.active img {
+        border-color: #F58323; }
 
 .single-content {
   position: relative;
@@ -304,6 +356,13 @@ a.btn.primary, button.btn.primary, input.btn.primary {
     margin: 0 auto;
     font-size: 1.125rem;
     line-height: 1.5em; }
+    .single-content .content .single-image {
+      margin-top: 2.5em; }
+    .single-content .content .map {
+      background-color: #ccc;
+      width: 100%;
+      height: 500px;
+      margin-bottom: 2.5em; }
     .single-content .content a {
       color: #F58323;
       font-weight: 600; }
