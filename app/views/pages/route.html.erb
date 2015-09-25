@@ -54,8 +54,8 @@ Ruta <%=@route.title%>
             <div class="single-image">
               <%= image_tag @route.tanks.first.main_photo(:large), id: 'header_img'%>
               <div class="image-selector">
-                <% @route.tanks.first.photos.each do |photo|%>
-                <a href="<%=photo.image.url(:large)%>" class="item"><%= image_tag photo.image.url(:thumb) %></a>
+                <% @route.tanks.each do |tank|%>
+                <a href="<%=tank.main_photo(:large)%>" class="item"><%= image_tag tank.main_photo(:thumb) %></a>
                 <%end%>
               </div>
             </div><!-- .single-image -->
