@@ -7,6 +7,15 @@
   <%= favicon_link_tag 'favicon.png', type: 'image/png' %>
   <%= stylesheet_link_tag 'public', media: 'all'%>
   <%= csrf_meta_tags %>
+
+  <!-- OpenGraph and META TAGS -->
+  <meta name="description" content="Descubre los Aljibes de San Esteban de la Litera" />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alchups de San Esteban de Litera">
+  <meta property="og:description" content="Descubre los Aljibes de San Esteban de la Litera">
+  <meta property="og:url" content="<%=request.original_url%>">
+  <meta property="og:site_name" content="Alchups.com">
+  <meta property="og:image" content="<%= image_url("photo-share-social.png") %>">
 </head>
 <body>
   <div class="site">
