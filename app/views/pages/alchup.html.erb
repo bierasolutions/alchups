@@ -29,7 +29,7 @@
             <div class="belong-route"><span class="label ruta<%=@tank.route.id%>"><%=link_to raw('Pertenece a<br />ruta <strong>1</strong> &gt;') ,route_path(@tank.route)%></span></div>
           <%end%>
           <div class="content" id="description" data-latitude="<%= @tank.latitude %>" data-longitude="<%= @tank.longitude %>">
-            <%=@tank.description%>
+            <%=simple_format (@tank.description)%>
             <br/><br/>
             <div id="map-canvas" class="map">
             </div>
