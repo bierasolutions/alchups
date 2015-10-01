@@ -41,16 +41,16 @@
       <div class="main-footer">
         <div class="wrapper">
           <div class="col">
-            <%=image_tag "logo-white.png", :alt=>"Logotipo de Alchups" %>
+            <%=link_to image_tag("logo-white.png", :alt=>"Logotipo de Alchups"), root_path %>
           </div><!-- .col -->
           <div class="col">
             <ul>
-              <li><%= link_to "Inicio", root_path %></li>
               <li><%= link_to "De los lavaderos a las Forcas", route_path(1) %></li>
               <li><%= link_to "De Perera a la Heredad", route_path(2) %></li>
               <li><%= link_to "¿Qué son los Alchups?", what_path %></a></li>
               <li><%= link_to "El pueblo", town_path %></li>
               <li><%= link_to "Web municipal", "http://www.sanestebandelitera.es/" %></li>
+              <li><%= link_to "Email: sanesteban@lalitera.org", "mailto:sanesteban@lalitera.org" %></li>
             </ul>
           </div><!-- .col -->
           <div class="col logos">
