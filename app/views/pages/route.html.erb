@@ -25,6 +25,11 @@ Ruta <%=@route.title%>
             <p>
             <%=simple_format (@route.description)%>
             </p>
+            <h2>Descárgate:</h2>
+            <ul>
+              <li><%= link_to 'La ruta en KML', "/downloads/ruta#{@route.id}.kml" %>.</li>
+              <li><%= link_to 'El panel informativo de la ruta en PDF', "/downloads/panel#{@route.id}.pdf"%>.</li>
+            </ul>
             <h2>Dificultad:</h2>
             <p>
             Dificultad Media. Ruta con una dificultad no muy elevada.
