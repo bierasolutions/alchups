@@ -26,6 +26,7 @@ gem 'unicorn'
 gem 'unicorn-rails'
 
 gem 'coordinate-converter'
+gem 'rails_12factor'
 
 group :test do
   gem 'rspec-rails', '~> 3.0'
