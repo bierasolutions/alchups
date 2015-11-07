@@ -17,8 +17,8 @@ namespace :tanks do
   task :transform_to_lat_long => [:environment] do
     Tank.all.each do |tank|
       coordinates = Coordinates.utm_to_lat_long("WGS-84", tank.y, tank.x, "30N")
-      tank.latitude = coordinates[:lat]
-      tank.longitude = coordinates[:long]
+      tank.latitude = coordinates[:lat] unless tank.latitude
+      tank.longitude = coordinates[:long] unless tank.longitude
       tank.save!
     end
   end
