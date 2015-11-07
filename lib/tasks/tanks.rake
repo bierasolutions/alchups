@@ -12,5 +12,15 @@ namespace :tanks do
       )
     end
   end
+
+  desc "transform X/Y coordinates to lat/long format"
+  task :transform_to_lat_long => [:environment] do
+    Tank.all.each do |tank|
+      coordinates = Coordinates.utm_to_lat_long("WGS-84", tank.y, tank.x, "30N")
+      tank.latitude = coordinates[:lat]
+      tank.longitude = coordinates[:long]
+      tank.save!
+    end
+  end
 end
 

@@ -14,7 +14,7 @@
 			<% @tanks.each do |tank| %>
 
 				
-				<tr data-latitude="<%= tank.coordinates[:lat] %>" data-longitude="<%= tank.coordinates[:long] %>"
+				<tr data-latitude="<%= tank.latitude %>" data-longitude="<%= tank.longitude %>"
 					data-iden = "<%= tank.id %>" data-title = "<%= tank.title %>">
 					<td><%= link_to tank.id, tank %></td>
 					<td><%= link_to tank.title, tank %></td>

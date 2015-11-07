@@ -9,7 +9,7 @@
 <h4>Ruta: <%= @tank.route%></h4> 
 <% end %>
 <h3>Descripción</h3>
-<p id='description' data-latitude="<%= @tank.coordinates[:lat] %>" data-longitude="<%= @tank.coordinates[:long] %>"><%= @tank.description %></p>
+<p id='description' data-latitude="<%= @tank.latitude %>" data-longitude="<%= @tank.longitude %>"><%= @tank.description %></p>
 <% unless @tank.photos.empty? %>
 <ul class="list-inline">
 <% @tank.photos.each do |photo|%>
