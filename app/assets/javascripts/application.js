@@ -2,6 +2,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery_minimalist_gallery
 //= require_tree .
 
 $(document).ready(function() {
@@ -30,14 +31,7 @@ $(document).ready(function() {
   }else{
 		initializeShow();	
 	}
-  $('.image-selector a').each(function(){
-    var href = $(this).attr('href');
-    $(this).on('click', function(){
-      $('#header_img').attr('src', href);
-      return false;
-    });
-    $('<img/>')[0].src = href;
-  });
+  $(".image-selector a").minimalistGallery("#header_img");
 });
 	
 	function homeMap(){
