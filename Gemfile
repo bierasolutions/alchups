@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 ruby "2.6.8"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+
+gem 'rails', '4.2.11.3'
 
 gem "paperclip", "~> 5.2"
 gem 'aws-sdk', '< 2.0'
 gem 'devise'
 gem 'rqrcode'
 
-gem 'bourbon'
+gem 'bourbon', '~> 4.1.1'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -29,16 +29,16 @@ gem 'coordinate-converter'
 gem 'rails_12factor'
 
 group :test do
-  gem 'rspec-rails', '~> 3.0'
-  gem 'factory_girl_rails'
-  gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.1'
+  gem 'factory_bot_rails'
+  gem 'sqlite3', '~> 1.3.6'
 end
 
 group :development do
   gem 'faker', '~> 1.4.3'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.6'
   gem 'spring'
   gem 'capistrano', '~> 3.4.0', require: false
   gem 'capistrano-rails', require: false
@@ -47,5 +47,5 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.15'
 end

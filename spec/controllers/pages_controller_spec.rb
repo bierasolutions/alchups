@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe PagesController, :type => :controller do
   describe "GET 'index'" do
     before(:each) do
-      FactoryGirl.create(:tank)
-      FactoryGirl.create(:tank)
-      FactoryGirl.create(:route)
-      FactoryGirl.create(:route)
+      FactoryBot.create(:tank)
+      FactoryBot.create(:tank)
+      FactoryBot.create(:route)
+      FactoryBot.create(:route)
       get :index
     end
     it "returns http success" do
@@ -23,7 +23,7 @@ RSpec.describe PagesController, :type => :controller do
   end
 
   describe "GET 'alchup'" do
-    let(:tank) {FactoryGirl.create(:tank)}
+    let(:tank) {FactoryBot.create(:tank)}
     before(:each) do
       get :alchup, {:id => tank.id}
     end

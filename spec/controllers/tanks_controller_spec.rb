@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe TanksController, :type => :controller do
   def valid_attributes
-    tank = FactoryGirl.build(:tank)
+    tank = FactoryBot.build(:tank)
     {title: tank.title}
   end
 
@@ -63,7 +63,7 @@ RSpec.describe TanksController, :type => :controller do
     render_views
     
     before(:each) do
-      @tank = FactoryGirl.create(:tank)
+      @tank = FactoryBot.create(:tank)
       get :show, {:id => @tank.id}
     end
 
@@ -79,7 +79,7 @@ RSpec.describe TanksController, :type => :controller do
   describe "GET 'edit'" do
     
     before(:each) do
-      @tank = FactoryGirl.create(:tank)
+      @tank = FactoryBot.create(:tank)
       get :edit, {:id => @tank.id}
     end
 
@@ -91,7 +91,7 @@ RSpec.describe TanksController, :type => :controller do
   describe "PUT update" do
    
     before(:each) do
-      @tank = FactoryGirl.create(:tank)
+      @tank = FactoryBot.create(:tank)
     end
 
     describe "with valid params" do
@@ -127,7 +127,7 @@ RSpec.describe TanksController, :type => :controller do
 
   describe "DELETE destroy" do
     before(:each) do
-      @tank = FactoryGirl.create(:tank)
+      @tank = FactoryBot.create(:tank)
     end
 
     it "deletes the Tank" do

@@ -4,7 +4,7 @@ RSpec.describe PhotosController, :type => :controller do
   login_admin
   describe "GET 'new'" do
     before(:each) do
-      @tank = FactoryGirl.create(:tank)
+      @tank = FactoryBot.create(:tank)
       get :new, :tank_id => @tank.id
     end
     it "returns http success" do
