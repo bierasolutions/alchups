@@ -4,8 +4,8 @@ ruby "2.6.8"
 
 gem 'rails', '4.2.11.3'
 
-gem "paperclip", "~> 5.2"
-gem 'aws-sdk', '< 2.0'
+gem 'paperclip', '~> 5.2'
+gem 'aws-sdk', '~> 2.3'
 gem 'devise'
 gem 'rqrcode'
 
