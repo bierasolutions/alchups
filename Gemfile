@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.6.8"
+ruby '2.6.10'
 
 
 gem 'rails', '4.2.11.3'
@@ -38,7 +38,7 @@ group :development do
   gem 'faker', '~> 1.4.3'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
-  gem 'sqlite3', '~> 1.3.6'
+  gem 'pg', '0.20'
   gem 'spring'
   gem 'capistrano', '~> 3.4.0', require: false
   gem 'capistrano-rails', require: false
@@ -47,5 +47,5 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '~> 0.15'
+  gem 'pg', '0.20'
 end
