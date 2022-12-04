@@ -5,7 +5,7 @@ ALCHUPS
 
 ## Versión obsoleta
 
-la versiónde producción actual es la basada en Jekyll, más información en https://github.com/danilat/alchups_jekyll/
+La versión de producción actual es la basada en Jekyll, más información en https://github.com/danilat/alchups_jekyll/
 ---
 
 Este es un proyecto desarrollado por [Biera Solutions](http://bierasolutions.com/) para el **[Ayuntamiento de San Esteban de
